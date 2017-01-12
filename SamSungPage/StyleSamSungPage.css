@@ -1,0 +1,683 @@
+﻿.headss {
+    height: 70px;
+    background-color: #1428a0;
+    margin-top: -4px;
+}
+
+    .headss .ssLogo {
+        float: right;
+        margin-top: 20px;
+    }
+
+.contentss {
+    margin-top: 20px;
+}
+
+.blockss-news h2 {
+    font-size: 14px;
+    line-height: 18px;
+    color: #272727;
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+    padding-top: 8px;
+}
+
+.blockss-news .itss {
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+
+.blockss-news .itss2 {
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+    .blockss-news .itss .img img, .blockss-news .itss2 .img img {
+        width: 100%;
+    }
+
+.blockss-news .t .l {
+    float: left;
+    font-size: 16px;
+    line-height: 18px;
+    color: #272727;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.blockss-news .t .r {
+    float: right;
+    font-size: 12px;
+    line-height: 18px;
+    color: #006cff;
+    cursor: pointer;
+}
+
+.filter {
+    height: 92px;
+    vertical-align: middle;
+}
+
+    .filter .tit {
+        color: #000;
+        font-size: 20px;
+        line-height: 18px;
+        vertical-align: middle;
+        padding-top: 40px;
+        float: left;
+        margin-right: 84px;
+    }
+
+    .filter .ipt {
+        font-size: 14px;
+        line-height: 18px;
+        height: 37px;
+        border: #dadada solid 1px;
+        float: left;
+        margin-top: 30px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        margin-left: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+.panel-km table .active {
+    background-color: #1428a0;
+    /*background: #b8d8ee url('/Assets/SamSungPage/bg-ss-tet_03.png') center center !important;*/
+    border-top: 0;
+}
+
+    .panel-km table .active .text {
+        color: #b8d8ee !important;
+    }
+
+.panel-km table .sle {
+    display: none;
+}
+
+.panel-km table .active .sle {
+    display: block;
+}
+
+.panel-km table td {
+    border-bottom: 0;
+}
+
+.panel-km table {
+    margin-left: -1px;
+}
+
+    .panel-km table td {
+        border-top: 0;
+        background-color: #b8d8ee;
+        /*background: #b8d8ee url('/Assets/SamSungPage/bg-ss-tet_05.png') center center;*/
+        border-right: #fff solid 4px !important;
+        width: 25%;
+    }
+
+.panel-km table {
+    height: 73px;
+}
+.panel-km .phone-panel .item-km .dh .right, .panel-km .laptop-panel .item-km .dh .right, .panel-km .tablet-panel .item-km .dh .right,.panel-km .all-panel .item-km .dh .right,.panel-km .pk-panel .item-km .dh .right {
+        color: #1429a0;
+        background-color: #fff;
+        border: #1429a0 solid 1px;
+    }
+
+        .panel-km .phone-panel .item-km .dh .right:hover, .panel-km .laptop-panel .item-km .dh .right:hover, .panel-km .tablet-panel .item-km .dh .right:hover,.panel-km .all-panel .item-km .dh .right:hover,.panel-km .pk-panel .item-km .dh .right:hover {
+            color: #fff;
+            /*background-color: #1429a0;*/
+            background: #1429a0 url('bg-ss-tet_03.png') center center !important;
+            border: #1429a0 solid 1px;
+        }
+
+    .panel-km table .laptop {
+        display: none;
+    }
+    .panel-km .all-panel .item-km, .panel-km .pk-panel .item-km {
+        border-bottom: 1px solid #DFDFDF;
+        float: left;
+        height: 461px;
+        border-right: 1px solid #DFDFDF;
+        padding: 10px;
+    }
+    .panel-km .all-panel .item-km .img, .panel-km .pk-panel .item-km .img{
+        height: 265px;
+        overflow: hidden;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    .panel-km .all-panel .item-km .img img, .panel-km .pk-panel .item-km .img img{
+    max-width: 200px;
+    max-height: 200px;
+    height: 200px;
+}
+    .panel-km .all-panel .item-km .name, .panel-km .pk-panel .item-km .name {
+    padding: 0px;
+    margin: 0px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1F1F1D;
+    overflow: hidden;
+}
+    .panel-km .all-panel .item-km .price, .panel-km .pk-panel .item-km .price {
+    height: 29px;
+    overflow: hidden;
+}
+    .panel-km .all-panel > div .left-2, .panel-km .pk-panel > div .left-2 {
+    float: left;
+    width: 120px;
+    color: #F83015;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+}
+    .panel-km .all-panel > div .right-2, .panel-km .pl-panel > div .right-2 {
+    float: left;
+    width: 90px;
+    color: #6A6A6A;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration: line-through;
+}
+    .panel-km .all-panel .item-km .km, .panel-km .pk-panel .item-km .km{
+    background-color: #EDEDED;
+    height: 66px;
+    overflow: hidden;
+}
+    .panel-km .all-panel .item-km .km ul, .panel-km .pk-panel .item-km .km ul{
+    margin: 5px 0px 0px -29px;
+    font-size: 11px;
+    line-height: 19px;
+    color: #4C4C4C;
+    padding-top: 1px;
+    list-style: outside none none;
+}
+    .panel-km .all-panel .item-km .dh .left, .panel-km .pk-panel .item-km .dh .left{
+    float: left;
+    font-size: 12px;
+    padding-top: 7px;
+    color: #6E6E6E;
+    margin-top: 10px;
+}
+    .panel-km .all-panel .item-km .dh .right, .panel-km .pk-panel .item-km .dh .right{
+    color: #1429A0;
+    background-color: #FFF;
+    border: 1px solid #1429A0;
+}
+    .panel-km .all-panel .item-km .dh .right, .panel-km .pk-panel .item-km .dh .right {
+    float: right;
+    width: 105px;
+    height: 29px;
+    border-radius: 5px;
+    /*background-color: #F83015;*/
+    margin-top: 10px;
+    text-align: center;
+    /*color: #FFF;*/
+    font-size: 15px;
+    line-height: 30px;
+    cursor: pointer;
+}
+    .panel-km table .all .text {
+        text-align: center;
+    }
+    .panel-km table td.item1 {
+        cursor: pointer;
+    }
+    /*.panel-km .panel1 {
+        border-top: 1px solid #DFDFDF
+    }*/
+    .panel-km .pk.item1 {
+        border-right: 0 !important;
+    }
+    .panel-km .all-panel .item-km .img-size-2, .panel-km .pk-panel .item-km .img-size-2,.panel-km .phone-panel .item-km .img-size-2, .panel-km .laptop-panel .item-km .img-size-2, .panel-km .tablet-panel .item-km .img-size-2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        -ms-opacity: 1;
+        opacity: 1;
+        z-index: 15;
+    }
+
+.panel-km .all-panel .item-km2, .panel-km .pk-panel .item-km2,.panel-km .phone-panel .item-km2, .panel-km .laptop-panel .item-km2, .panel-km .tablet-panel .item-km2 {
+        position: relative;
+    }
+    .panel-km .all-panel .item-km2:hover .img-size-2, .panel-km .pk-panel .item-km2:hover .img-size-2,.panel-km .phone-panel .item-km2:hover .img-size-2, .panel-km .laptop-panel .item-km2:hover .img-size-2, .panel-km .tablet-panel .item-km2:hover .img-size-2 {
+        -ms-opacity: 0;
+        opacity: 0;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        /*z-index: -99;*/
+    }
+    .panel-km .all-panel .item-km2:hover .dh .right, .panel-km .pk-panel .item-km2:hover .dh .right,.panel-km .phone-panel .item-km2:hover .dh .right, .panel-km .laptop-panel .item-km2:hover .dh .right, .panel-km .tablet-panel .item-km2:hover .img-size-2 {
+        z-index: 16;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+/* Begin: Dien thoai xem chieu ngang, doc. (Extra small devices: .col-xs-*) */
+@media all and (max-width: 767px) {
+    .blockss-news .img {
+        width: 101px;
+        height: 75px;
+        overflow: hidden;
+        float: left;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+
+        .blockss-news .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+    .blockss-news h2 {
+        font-size: 13px;
+        padding-top: 15px;
+    }
+
+    .blockss-news .t {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+
+    .blockss-news .itss {
+        padding-right: 10px;
+    }
+
+    .blockss-news .itss2 {
+        padding-left: 10px;
+    }
+
+    .panel-km table .phone .ico-phone {
+        background-position: -730px -440px;
+        margin-left: 35px;
+        margin-right: 10px;
+        margin-top: 2px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .active .ico-phone, .panel-km table .kmHover .ico-phone {
+        /*background-image: url("/Assets/SamSungPage/phone2.png");*/
+        background-position: -690px -100px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .item1 .text {
+        font-size: 12px;
+        color: #010101;
+    }
+
+    .panel-km table .phone .text {
+        padding-top: 22px;
+    }
+
+    .panel-km table .tablet .ico-tablet {
+        
+        background-position: -740px -490px;
+        width: 35px;
+        height: 50px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+
+    .panel-km table .active .ico-tablet, .panel-km table .kmHover .ico-tablet {
+        /*background-image: url("/Assets/SamSungPage/tablet2.png");*/
+        background-position: -760px -100px;
+        width: 35px;
+        height: 50px;
+    }
+
+    .panel-km table .text3 {
+        padding-top: 27px;
+    }
+    .panel-km table .pk .ico-pk {
+        background-position: -730px -390px;
+        width: 44px;
+        height: 44px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+        float: left;
+    }
+    .panel-km table .active .ico-pk, .panel-km table .kmHover .ico-pk {
+        /*background-image: url("/Assets/SamSungPage/pk2.png");*/
+        background-position: -713px -100px;
+        width: 44px;
+        height: 44px; 
+    }
+    .panel-km table .pk .text {
+        padding-top: 19px;
+    }
+    .panel-km table .all .text {
+        padding-top: 19px;
+    }
+}
+/* End */
+
+/* Begin: May tinh bang (Small devices: .col-sm-*) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .blockss-news .img {
+        width: 101px;
+        height: 75px;
+        overflow: hidden;
+        float: left;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+
+        .blockss-news .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+    .blockss-news h2 {
+        font-size: 13px;
+        padding-top: 15px;
+    }
+
+    .blockss-news .t {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+
+    .blockss-news .itss {
+        padding-right: 10px;
+    }
+
+    .blockss-news .itss2 {
+        padding-left: 10px;
+    }
+
+    .panel-km table .phone .ico-phone {
+        background-position: -730px -440px;
+        margin-left: 35px;
+        margin-right: 10px;
+        margin-top: 2px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .active .ico-phone, .panel-km table .kmHover .ico-phone {
+        /*background-image: url("/Assets/SamSungPage/phone2.png");*/
+        background-position: -690px -100px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .item1 .text {
+        font-size: 12px;
+        color: #010101;
+    }
+
+    .panel-km table .phone .text {
+        padding-top: 22px;
+    }
+
+    .panel-km table .tablet .ico-tablet {
+        background-position: -740px -490px;
+        width: 35px;
+        height: 50px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+
+    .panel-km table .active .ico-tablet, .panel-km table .kmHover .ico-tablet {
+        /*background-image: url("/Assets/SamSungPage/tablet2.png");*/
+        background-position: -760px -100px;
+        width: 35px;
+        height: 50px;
+    }
+
+    .panel-km table .text3 {
+        padding-top: 27px;
+    }
+    .panel-km table .pk .ico-pk {
+        background-position: -730px -390px;
+        width: 44px;
+        height: 44px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+        float: left;
+    }
+    .panel-km table .active .ico-pk, .panel-km table .kmHover .ico-pk {
+        /*background-image: url("/Assets/SamSungPage/pk2.png");*/
+        background-position: -713px -100px;
+        width: 44px;
+        height: 44px; 
+    }
+    .panel-km table .pk .text {
+        padding-top: 19px;
+    }
+    .panel-km table .all .text {
+        padding-top: 19px;
+    }
+
+}
+/* End */
+
+/* Begin: May tinh (Medium devices: .col-md-*) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .slide-news {
+        height: 365px;
+        overflow: hidden;
+    }
+
+    .blockss-news .img {
+        width: 101px;
+        height: 75px;
+        overflow: hidden;
+    }
+
+        .blockss-news .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+    .blockss-news h2 {
+        height: 62px;
+        overflow: hidden;
+        font-size: 11px;
+    }
+
+    .blockss-news .t {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+        height: 30px;
+        margin-top: 2px;
+    }
+
+    .blockss-news .itss {
+        padding-right: 10px;
+    }
+
+    .blockss-news .itss2 {
+        padding-left: 10px;
+    }
+
+    .panel-km table .phone .ico-phone {
+        
+        background-position: -730px -440px;
+        margin-left: 35px;
+        margin-right: 10px;
+        margin-top: 2px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .active .ico-phone, .panel-km table .kmHover .ico-phone {
+        /*background-image: url("/Assets/SamSungPage/phone2.png");*/
+        background-position: -690px -100px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .item1 .text {
+        font-size: 15px;
+        color: #010101;
+    }
+
+    .panel-km table .phone .text {
+        padding-top: 18px;
+    }
+
+    .panel-km table .tablet .ico-tablet {
+        background-position: -740px -490px;
+        width: 35px;
+        height: 50px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+
+    .panel-km table .active .ico-tablet, .panel-km table .kmHover .ico-tablet {
+        /*background-image: url("/Assets/SamSungPage/tablet2.png");*/
+        background-position: -760px -100px;
+        width: 35px;
+        height: 50px;
+    }
+
+    .panel-km table .text3 {
+        padding-top: 23px;
+    }
+    .panel-km table .pk .ico-pk {
+        background-position: -730px -390px;
+        width: 44px;
+        height: 44px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+        float: left;
+    }
+    .panel-km table .active .ico-pk, .panel-km table .kmHover .ico-pk {
+        /*background-image: url("/Assets/SamSungPage/pk2.png");*/
+        background-position: -713px -100px;
+        width: 44px;
+        height: 44px; 
+    }
+    .panel-km table .pk .text {
+        padding-top: 19px;
+    }
+    .panel-km table .all .text {
+        padding-top: 16px;
+    }
+}
+/* End */
+
+/* Begin: May tinh, man hinh lon (Large devices: .col-lg-*) */
+@media all and (min-width: 1200px) {
+    .slide-news {
+        height: 390px;
+        overflow: hidden;
+    }
+
+    .blockss-news .img {
+        width: 147px;
+        height: 109px;
+        overflow: hidden;
+    }
+
+        .blockss-news .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+    .blockss-news h2 {
+        height: 62px;
+        overflow: hidden;
+    }
+
+    .blockss-news .t {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+        height: 20px;
+        margin-top: 2px;
+    }
+
+    .panel-km table .phone .ico-phone {
+        background-position: -730px -440px;
+        margin-left: 35px;
+        margin-right: 10px;
+        margin-top: 2px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .active .ico-phone, .panel-km table .kmHover .ico-phone {
+        /*background-image: url("/Assets/SamSungPage/phone2.png");*/
+        background-position: -690px -100px;
+        width: 21px;
+        height: 40px;
+    }
+
+    .panel-km table .item1 .text {
+        font-size: 20px;
+        color: #010101;
+    }
+
+    .panel-km table .phone .text {
+        padding-top: 10px;
+    }
+
+    .panel-km table .tablet .ico-tablet {
+        background-position: -740px -490px;
+        width: 35px;
+        height: 50px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+
+    .panel-km table .active .ico-tablet, .panel-km table .kmHover .ico-tablet {
+        /*background-image: url("/Assets/SamSungPage/tablet2.png");*/
+        background-position: -760px -100px;
+        width: 35px;
+        height: 50px;
+    }
+
+    .panel-km table .text3 {
+        padding-top: 15px;
+    }
+    .panel-km table .pk .ico-pk {
+        background-position: -730px -390px;
+        width: 44px;
+        height: 44px;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+        float: left;
+    }
+    .panel-km table .active .ico-pk, .panel-km table .kmHover .ico-pk {
+        /*background-image: url("/Assets/SamSungPage/pk2.png");*/
+        background-position: -713px -100px;
+        width: 44px;
+        height: 44px; 
+    }
+    .panel-km table .pk .text {
+        padding-top: 12px;
+    }
+}
+
+/* End */
