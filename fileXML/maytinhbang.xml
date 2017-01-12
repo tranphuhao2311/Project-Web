@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf8"?>
+<DSMayTinhBang>
+  <MayTinhBang MASP="SP16">
+    <HINHDAIDIEN>SP16_1.JPG</HINHDAIDIEN>
+    <TENSP>Ipad Air 2 4G 32GB</TENSP>
+    <GIA>12490000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP17">
+    <HINHDAIDIEN>SP17_1.JPG</HINHDAIDIEN>
+    <TENSP>IPad mini 4 Cellular 16Gb 4G</TENSP>
+    <GIA>11490000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP18">
+    <HINHDAIDIEN>SP18_1.JPG</HINHDAIDIEN>
+    <TENSP>IPad mini 4 Cellular 64GB 4G</TENSP>
+    <GIA>13490000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP19">
+    <HINHDAIDIEN>SP19_1.JPG</HINHDAIDIEN>
+    <TENSP>IPad Pro Wi-Fi 4G 128GB 4G</TENSP>
+    <GIA>10990000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP20">
+    <HINHDAIDIEN>SP20_1.JPG</HINHDAIDIEN>
+    <TENSP>Samsung Tab T819</TENSP>
+    <GIA>23990000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP45">
+    <HINHDAIDIEN>SP45_1.JPG</HINHDAIDIEN>
+    <TENSP>Máy tính b?ng Dell Venue 7 3740</TENSP>
+    <GIA>3990000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP46">
+    <HINHDAIDIEN>SP46_1.JPG</HINHDAIDIEN>
+    <TENSP>ASUS ZenPad 7.0 (Z370CG)</TENSP>
+    <GIA>3790000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP47">
+    <HINHDAIDIEN>SP47_1.JPG</HINHDAIDIEN>
+    <TENSP>Asus Zenpad 8 Z380 16GB</TENSP>
+    <GIA>5790000</GIA>
+  </MayTinhBang>
+  <MayTinhBang MASP="SP48">
+    <HINHDAIDIEN>SP48_1.JPG</HINHDAIDIEN>
+    <TENSP>Tab Huawei T1 10.0</TENSP>
+    <GIA>3990000</GIA>
+  </MayTinhBang>
+</DSMayTinhBang>

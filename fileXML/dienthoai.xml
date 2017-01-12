@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf8"?>
+<DSDienThoai>
+  <DienThoai MASP="SP1">
+    <HINHDAIDIEN>SP1_1.JPG</HINHDAIDIEN>
+    <TENSP>iPhone 6S 16GB</TENSP>
+    <GIA>15990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP2">
+    <HINHDAIDIEN>SP2_1.JPG</HINHDAIDIEN>
+    <TENSP>iPhone 6S 64GB</TENSP>
+    <GIA>17990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP3">
+    <HINHDAIDIEN>SP3_1.JPG</HINHDAIDIEN>
+    <TENSP>iPhone 6S Plus 16GB</TENSP>
+    <GIA>18990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP4">
+    <HINHDAIDIEN>SP4_1.JPG</HINHDAIDIEN>
+    <TENSP>Samsung Galaxy A5 2016 (A510)</TENSP>
+    <GIA>7990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP5">
+    <HINHDAIDIEN>SP5_1.JPG</HINHDAIDIEN>
+    <TENSP>Samsung Galaxy J2</TENSP>
+    <GIA>2990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP6">
+    <HINHDAIDIEN>SP6_1.JPG</HINHDAIDIEN>
+    <TENSP>Samsung Galaxy J7 (2016)</TENSP>
+    <GIA>5790000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP26">
+    <HINHDAIDIEN>SP26_1.JPG</HINHDAIDIEN>
+    <TENSP>HTC Desire 326G Dual Sim</TENSP>
+    <GIA>1990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP27">
+    <HINHDAIDIEN>SP27_1.JPG</HINHDAIDIEN>
+    <TENSP>HTC Desire Eye</TENSP>
+    <GIA>5590000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP28">
+    <HINHDAIDIEN>SP28_1.JPG</HINHDAIDIEN>
+    <TENSP>HTC One M8 Eye</TENSP>
+    <GIA>5990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP29">
+    <HINHDAIDIEN>SP29_1.JPG</HINHDAIDIEN>
+    <TENSP>Huawei Gr5</TENSP>
+    <GIA>4490000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP30">
+    <HINHDAIDIEN>SP30_1.JPG</HINHDAIDIEN>
+    <TENSP>Huawei Titan – Y6 Pro</TENSP>
+    <GIA>2790000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP31">
+    <HINHDAIDIEN>SP31_1.JPG</HINHDAIDIEN>
+    <TENSP>Huawei Ascend Y541-U02</TENSP>
+    <GIA>1590000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP32">
+    <HINHDAIDIEN>SP32_1.JPG</HINHDAIDIEN>
+    <TENSP>Microsoft Lumia 950 XL</TENSP>
+    <GIA>6590000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP33">
+    <HINHDAIDIEN>SP33_1.JPG</HINHDAIDIEN>
+    <TENSP>Nokia 230</TENSP>
+    <GIA>1389000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP34">
+    <HINHDAIDIEN>SP34_1.JPG</HINHDAIDIEN>
+    <TENSP>Nokia Lumia 730</TENSP>
+    <GIA>2790000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP35">
+    <HINHDAIDIEN>SP35_1.JPG</HINHDAIDIEN>
+    <TENSP>Oppo F1</TENSP>
+    <GIA>4990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP36">
+    <HINHDAIDIEN>SP36_1.JPG</HINHDAIDIEN>
+    <TENSP>Oppo F1S</TENSP>
+    <GIA>5990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP37">
+    <HINHDAIDIEN>SP37_1.JPG</HINHDAIDIEN>
+    <TENSP>Oppo Neo 7</TENSP>
+    <GIA>3290000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP38">
+    <HINHDAIDIEN>SP38_1.JPG</HINHDAIDIEN>
+    <TENSP>Sony Xperia C4 Dual</TENSP>
+    <GIA>6190000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP39">
+    <HINHDAIDIEN>SP39_1.JPG</HINHDAIDIEN>
+    <TENSP>Sony Xperia M5 Dual</TENSP>
+    <GIA>8990000</GIA>
+  </DienThoai>
+  <DienThoai MASP="SP40">
+    <HINHDAIDIEN>SP40_1.JPG</HINHDAIDIEN>
+    <TENSP>Sony Xperia Z5 Dual</TENSP>
+    <GIA>13990000</GIA>
+  </DienThoai>
+</DSDienThoai>

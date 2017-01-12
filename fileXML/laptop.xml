@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf8"?>
+<DSLaptop>
+  <Laptop MASP="SP11">
+    <HINHDAIDIEN>SP11_1.JPG</HINHDAIDIEN>
+    <TENSP>Laptop Asus F555LF - XX166D</TENSP>
+    <GIA>11990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP12">
+    <HINHDAIDIEN>SP12_1.JPG</HINHDAIDIEN>
+    <TENSP>Laptop Dell 5448 - RJNPG1</TENSP>
+    <GIA>13990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP13">
+    <HINHDAIDIEN>SP13_1.JPG</HINHDAIDIEN>
+    <TENSP>Laptop Dell INS3558 - 70062972</TENSP>
+    <GIA>14990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP14">
+    <HINHDAIDIEN>SP14_1.JPG</HINHDAIDIEN>
+    <TENSP>MacBook Air (2015) - MJVE2 - 70062972</TENSP>
+    <GIA>22990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP15">
+    <HINHDAIDIEN>SP15_1.JPG</HINHDAIDIEN>
+    <TENSP>Macbook Pro 15.4 512GB (Retina Display)</TENSP>
+    <GIA>59990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP41">
+    <HINHDAIDIEN>SP41_1.JPG</HINHDAIDIEN>
+    <TENSP>Laptop Dell N3459 - C3I51105</TENSP>
+    <GIA>11990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP42">
+    <HINHDAIDIEN>SP42_1.JPG</HINHDAIDIEN>
+    <TENSP>Macbook Pro 15.4 256GB (Retina Display)</TENSP>
+    <GIA>47990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP43">
+    <HINHDAIDIEN>SP43_1.JPG</HINHDAIDIEN>
+    <TENSP>Laptop Asus K555LD</TENSP>
+    <GIA>11990000</GIA>
+  </Laptop>
+  <Laptop MASP="SP44">
+    <HINHDAIDIEN>SP44_1.JPG</HINHDAIDIEN>
+    <TENSP>Laptop Asus X555UJ_XX064D</TENSP>
+    <GIA>12690000</GIA>
+  </Laptop>
+</DSLaptop>
