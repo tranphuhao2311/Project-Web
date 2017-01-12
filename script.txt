@@ -1,0 +1,1122 @@
+﻿CREATE DATABASE IF NOT EXISTS `WEBPHP` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+/*tao table SANPHAM trong DB WEBPHP*/
+USE `WEBPHP`;
+
+CREATE TABLE `SANPHAM` (
+  `MASP` char(11) NOT NULL,
+  `TENSP` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MALOAISP` int(11) NOT NULL,
+  `MANSX` int(11) NULL,
+  `MAHDH` int(11) NULL,
+	`TRANGTHAI` INT(11) NULL,
+	`GIA` double NULL,
+	`MADACDIEM` int(11) NOT NULL,
+	`HINHDAIDIEN` VARCHAR(150) NULL,
+	`HINH1` VARCHAR(150) NULL,
+	`HINH2` VARCHAR(150) NULL,
+	`HINH3` VARCHAR(150) NULL,
+	`HINH4` VARCHAR(150) NULL,
+	`HINHTHUCTE1` VARCHAR(150) NULL,
+	`HINHTHUCTE2` VARCHAR(150) NULL,
+	`HINHTHUCTE3` VARCHAR(150) NULL,
+	`HINHTHUCTE4` VARCHAR(150) NULL,
+	`HINHTHUCTE5` VARCHAR(150) NULL,
+	`HINHTHUCTE6` VARCHAR(150) NULL,
+  PRIMARY KEY (`MASP`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*Tao bang dac diem noi bat*/
+
+CREATE TABLE `DACDIEMNOIBAT` (
+	`MADACDIEM` int(11) NOT NULL AUTO_INCREMENT,
+	`MASP` char(11) NULL,
+	`DACDIEMNOIBAT` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`HINH1` VARCHAR(150) NULL,
+	`HINH2` VARCHAR(150) NULL,
+	`HINH3` VARCHAR(150) NULL,
+	`HINH4` VARCHAR(150) NULL,
+	`HINH5` VARCHAR(150) NULL,
+	`HINH6` VARCHAR(150) NULL,
+	`HINH7` VARCHAR(150) NULL,
+	`HINH8` VARCHAR(150) NULL,
+  PRIMARY KEY (`MADACDIEM`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*tao table hangsanxuat*/
+
+
+
+CREATE TABLE `HANGSANXUAT` (
+	`MAHANGSANXUAT` int(11) NOT NULL AUTO_INCREMENT,
+	`TENHANGSANXUAT` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`LOAISP` int(11) NULL,
+  PRIMARY KEY (`MAHANGSANXUAT`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*TAO table LOAISP*/
+
+CREATE TABLE `LOAISP` (
+	`MALOAI` int(11) NOT NULL AUTO_INCREMENT,
+	`TENLOAI` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MALOAI`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/* Tao bang TRANGTHAI*/
+
+CREATE TABLE `TRANGTHAI` (
+	`MATRANGTHAI` int(11) NOT NULL AUTO_INCREMENT,
+	`TENTRANGTHAI` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MATRANGTHAI`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/* Tao bang MAUSP*/
+
+CREATE TABLE `MAUSAC` (
+	`MAMAU` int(11) NOT NULL AUTO_INCREMENT,
+	`TENMAU` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MAMAU`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*Bang MAUSP*/
+
+CREATE TABLE `MAUSP` (
+	`MAMAU` int(11) NOT NULL,
+	`MASP` char(11) NOT NULL,
+  PRIMARY KEY (`MAMAU`,`MASP`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*HEDIEUHANH*/
+
+CREATE TABLE `HEDIEUHANH` (
+	`MAHDH` int(11) NOT NULL AUTO_INCREMENT,
+	`TENHDH`  varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MAHDH`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+
+/* tao bang TINTUC*/
+
+CREATE TABLE `TINTUC` (
+	`MATIN` int(11) NOT NULL AUTO_INCREMENT,
+	`TIEUDE` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`TOMTAT` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`NOIDUNG` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`NGAYDANG` DATETIME NOT NULL,
+	`LOAITIN` int(11) NOT NULL,
+	`HINH1` VARCHAR(150) NULL,
+	`HINH2` VARCHAR(150) NULL,
+	`HINH3` VARCHAR(150) NULL,
+	`HINH4` VARCHAR(150) NULL,
+	`HINH5` VARCHAR(150) NULL,
+	`HINH6` VARCHAR(150) NULL,
+	`HINH7` VARCHAR(150) NULL,
+	`HINH8` VARCHAR(150) NULL,
+  PRIMARY KEY (`MATIN`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*Tao bang LOAITINTUC*/
+
+CREATE TABLE `LOAITINTUC` (
+	`MALOAI` int(11) NOT NULL AUTO_INCREMENT,
+	`TENLOAI` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MALOAI`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*Tao bang SLIDESHOW*/
+
+CREATE TABLE `SLIDESHOW` (
+	`MASLIDESHOW` int(11) NOT NULL AUTO_INCREMENT,
+	`TIEUDE` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`ACTIVE` int(1) NOT NULL,
+	`MAHINH` int(11) NOT NULL,
+  PRIMARY KEY (`MASLIDESHOW`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/*Tao bang HINHSLIDESHOW*/
+
+CREATE TABLE `HINHSLIDESHOW` (
+	`MAHINH` int(11) NOT NULL AUTO_INCREMENT,
+	`HINH` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MAHINH`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+
+/* tao bang THONGSOKYTHUATLAPTOP*/
+
+CREATE TABLE `THONGSOKYTHUATLAPTOP` (
+	`MATHONGTINLAPTOP` int(11) NOT NULL AUTO_INCREMENT,
+	`BOVIXULY` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`BONHO` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`MANHINH` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`OCUNG` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`CARDDOHOA` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`HEDIEUHANH` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`TINHNANGDACBIET` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`THONGTINTHEM` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`MASP` char(11) NOT NULL,
+  PRIMARY KEY (`MATHONGTINLAPTOP`,`MASP`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/* tao bang THONGSOKYTHUATDIENTHOAI*/
+ 
+ CREATE TABLE `THONGSOKYTHUATDIENTHOAI` (
+	`MATHONGTINDIENTHOAI` int(11) NOT NULL AUTO_INCREMENT,
+	`MANHINH` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`MOTACHUNG`TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`CPU` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`RAMROM` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`CAMERA` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`PIN` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`THONGTINTHEM` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`HEDIEUHANH` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`TINHNANGDACBIET` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`MASP` char(11) NOT NULL,
+  PRIMARY KEY (`MATHONGTINDIENTHOAI`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/* tao bang BINHLUAN*/
+
+CREATE TABLE `BINHLUAN` (
+	`MABINHLUAN` int(11) NOT NULL AUTO_INCREMENT,
+	`NGUOIBINHLUAN` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`NOIDUNG` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`NGAYGIO` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`NVTRALOI` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`MASP` char(11) NOT NULL,
+  PRIMARY KEY (`MABINHLUAN`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+/* tao bang TRALOIBINHLUAN*/
+
+CREATE TABLE `TRALOIBINHLUAN` (
+	`MATRALOI` int(11) NOT NULL AUTO_INCREMENT,
+	`MANV` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`TENNV` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`NGAYGIO` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`NDTRALOI` TEXT COLLATE utf8_unicode_ci DEFAULT NULL,
+	`MABL` int(11) NOT NULL, 
+PRIMARY KEY (`MATRALOI`,`MABL`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+/*
+/*khoa ngoai BINHLUAN-TRALOIBINHLUAN*/
+/*ALTER TABLE TRALOIBINHLUAN ADD CONSTRAINT fk_TRALOIBINHLUAN FOREIGN KEY(MABL) REFERENCES BINHLUAN(MABINHLUAN);*/
+
+/*khoa ngoai MANSX-MAHANGSANXUAT */
+/*ALTER TABLE SANPHAM ADD CONSTRAINT fk_HANGSX FOREIGN KEY(MANSX) REFERENCES HANGSANXUAT(MAHANGSANXUAT);*/
+
+/*khoa ngoai BINHLUAN-SANPHAM */
+/*ALTER TABLE BINHLUAN ADD CONSTRAINT fk_BINHLUAN FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP);*/
+
+/*khoa ngoai TRANGTHAI-SANPHAM*/
+/*ALTER TABLE SANPHAM ADD CONSTRAINT fk_TRANGTHAISP FOREIGN KEY(TRANGTHAI) REFERENCES TRANGTHAI(MATRANGTHAI);*/
+
+/*Khoa ngoai SANPHAM-LOAISP*/
+/*ALTER TABLE SANPHAM ADD CONSTRAINT fk_LOAISP FOREIGN KEY(MALOAISP) REFERENCES LOAISP(MALOAI);*/
+
+/*Khoa Ngoai MAUSAC-MAUSP*/
+/*ALTER TABLE MAUSP ADD CONSTRAINT fk_MAUSACSP FOREIGN KEY(MAMAU) REFERENCES MAUSAC(MAMAU);*/
+
+/*Khoa Ngoai MAUSP-SP*/
+/*ALTER TABLE MAUSP ADD CONSTRAINT fk_MAUSP_SP FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP);*/
+
+/*Khoa ngoai SANPHAM-THONGTINSPLAPTOP*/
+/*ALTER TABLE THONGSOKYTHUATLAPTOP ADD CONSTRAINT fk_THONGSOKYTHUATLAPTOP FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP);*/
+
+/*Khoa ngoai SANPHAM-THONGTINSPDIENTHOAI*/
+/*ALTER TABLE THONGSOKYTHUATDIENTHOAI ADD CONSTRAINT fk_THONGSOKYTHUATDIENTHOAI FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP);*/
+
+/*Khoa ngoai SP-HDH*/
+/*ALTER TABLE SANPHAM ADD CONSTRAINT fk_SANPHAM_HEDIEUHANH FOREIGN KEY(MAHDH) REFERENCES HEDIEUHANH(MAHDH);*/
+
+/*Khoa ngoai tintuc-loaitintuc*/
+
+/*ALTER TABLE TINTUC ADD CONSTRAINT fk_TINTUC_LOAITINTUC FOREIGN KEY(LOAITIN) REFERENCES LOAITINTUC(MALOAI);*/
+
+
+/*insert du lieu vao cac bang */
+/* LOAISP */
+
+INSERT INTO LOAISP(TENLOAI) VALUES('ĐIỆN THOẠI');
+INSERT INTO LOAISP(TENLOAI) VALUES('LAPTOP'); 
+INSERT INTO LOAISP(TENLOAI) VALUES('MÁY TÍNH BẢNG'); 
+INSERT INTO LOAISP(TENLOAI) VALUES('PHỤ KIỆN');  
+
+/*MAUSP*/
+ 
+ INSERT INTO MAUSAC(TENMAU) VALUES('BLACK');
+ INSERT INTO MAUSAC(TENMAU) VALUES('WHITE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('SILVER');
+ INSERT INTO MAUSAC(TENMAU) VALUES('GRAY');
+ INSERT INTO MAUSAC(TENMAU) VALUES('GOLD');
+ INSERT INTO MAUSAC(TENMAU) VALUES('ROSE GOLD');
+ INSERT INTO MAUSAC(TENMAU) VALUES('BROWN');
+ INSERT INTO MAUSAC(TENMAU) VALUES('CHROME');
+ INSERT INTO MAUSAC(TENMAU) VALUES('WHITE RED');
+ INSERT INTO MAUSAC(TENMAU) VALUES('ORANGE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('COPPER');
+ INSERT INTO MAUSAC(TENMAU) VALUES('VANILLAWHILE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('MINT');
+ INSERT INTO MAUSAC(TENMAU) VALUES('BLUE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('YELLOW');
+ INSERT INTO MAUSAC(TENMAU) VALUES('PINK');
+ INSERT INTO MAUSAC(TENMAU) VALUES('BLACK SILVER');
+ INSERT INTO MAUSAC(TENMAU) VALUES('DARK BLUE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('WHITE GOLD');
+ INSERT INTO MAUSAC(TENMAU) VALUES('WHITE BLUE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('PURPLE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('EMERALD');
+ INSERT INTO MAUSAC(TENMAU) VALUES('NAVY');
+ INSERT INTO MAUSAC(TENMAU) VALUES('RED'); 
+ INSERT INTO MAUSAC(TENMAU) VALUES('GREEN');
+ INSERT INTO MAUSAC(TENMAU) VALUES('BLUE BLACK');
+ INSERT INTO MAUSAC(TENMAU) VALUES('COFFEE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('CYAN');
+ INSERT INTO MAUSAC(TENMAU) VALUES('CHAMPAGNE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('DARK SILVER');
+ INSERT INTO MAUSAC(TENMAU) VALUES('BLACKGOLD');
+ INSERT INTO MAUSAC(TENMAU) VALUES('BRONZE');
+ INSERT INTO MAUSAC(TENMAU) VALUES('SPACE GREY');
+ INSERT INTO MAUSAC(TENMAU) VALUES('CORAL');
+ INSERT INTO MAUSAC(TENMAU) VALUES('DARK GRAY');
+ INSERT INTO MAUSAC(TENMAU) VALUES('BLACK RED');
+ 
+ /*HANGSANXUAT*/
+ 
+ 
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Apple',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Samsung',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Nokia',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Sony',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Huawei',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Oppo',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Htc',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Viettel',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Asus',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Masstel',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Lenovo',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Mobiistar',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('WingCall',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Archos',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Massgo',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Microsoft',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Philips',1);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Vivo',2);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT) VALUES('Xphone');
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Dell',2);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Acer',2);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('HP',2);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Apple',2);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Asus',2);
+ INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Masstel',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Apple',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Dell',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Samsung',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Huawei',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Asus',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Acer',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Lenovo',3);
+INSERT INTO HANGSANXUAT(TENHANGSANXUAT,LOAISP) VALUES('Archos',3);
+
+
+ 
+ /*TRANGTHAI*/
+ 
+ INSERT INTO TRANGTHAI(TENTRANGTHAI) VALUES('TRẢ GÓP 0%');
+ INSERT INTO TRANGTHAI(TENTRANGTHAI) VALUES('BÁN CHẠY');
+ INSERT INTO TRANGTHAI(TENTRANGTHAI) VALUES('MỚI VỀ');
+ INSERT INTO TRANGTHAI(TENTRANGTHAI) VALUES('KHUYẾN MÃI');
+ 
+  /*TRANGTHAI*/
+  
+ INSERT INTO HEDIEUHANH(TENHDH) VALUES('Android');
+ INSERT INTO HEDIEUHANH(TENHDH) VALUES('iOS');
+ INSERT INTO HEDIEUHANH(TENHDH) VALUES('Windows Phone');
+ INSERT INTO HEDIEUHANH(TENHDH) VALUES('Mac OS');
+ INSERT INTO HEDIEUHANH(TENHDH) VALUES('Windows');
+ INSERT INTO HEDIEUHANH(TENHDH) VALUES('Free Dos');
+ 
+ /*LOAITINTUC*/
+ 
+ INSERT INTO LOAITINTUC(TENLOAI) VALUES('Tin khuyến mãi');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Mẹo công nghệ - Khai thác');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Mẹo công nghệ - Bảo quản');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Đánh giá công nghệ');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Tin công nghệ');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Bệnh viện công nghệ');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Ứng dụng hay');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Techfun TV');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Tin tuyển cụng');
+  INSERT INTO LOAITINTUC(TENLOAI) VALUES('Tin công ty');
+ 
+ /*TINTUC 1 dòng, nhớ xuống dòng y như trong trang tin tức nha ong*/
+ 
+  INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8)VALUES('8 điểm khiến Galaxy S8 trở nên hấp dẫn','Sau khi Galaxy Note 7 chính thức bị khai tử thì Galaxy S8 hoặc model nào có có tên gọi tương tự chính là sản phẩm tiếp theo được Samsung kì vọng sẽ trở thành “vị cứu tinh” của mình.','Sau khi Galaxy Note 7 chính thức bị khai tử thì Galaxy S8 hoặc model nào có có tên gọi tương tự chính là sản phẩm tiếp theo được Samsung kì vọng sẽ trở thành “vị cứu tinh” của mình.
+  Có khá nhiều thông tin rò rỉ về sản phẩm này được rò rỉ trên các trang tin công nghệ, và dưới đây là tổng hợp 8 điểm khiến Galaxy S8 trở nên hấp dẫn với các các Samfan dựa trên các thông tin rò rỉ.
+  Hai phiên bản màn hình khác nhau
+  Một model sẽ có màn hình 5,1 inch, bản còn lại dùng màn hình 5,5 inch, theo nguồn tin từ Korea Herald. Đây được xem là kích thước lý tưởng cho những chiếc smartphone cao cấp hiện nay
+  Cả hai phiên bản đều sở hữu màn hình cong
+  Nguồn tin từ Korea Herald cũng khẳng định Samsung sẽ khai tử bản màn hình phẳng để tung ra 2 chiếc S8 màn hình cong. Nguyên nhân chủ yếu là doanh số của mẫu S7 edge màn hình cong tốt ngoài mong đợi trong khi bản S7 màn hình phẳng không tạo ra đủ sự phấn khích.
+  Có camera kép trên mặt lưng
+  ET News cho rằng Galaxy S8 sẽ có camera kép, một độ phân giải 16 megapixel, một 8 megapixel. Hiện chưa rõ tính năng của hệ thống camera kép trên S8.
+Thông thường, mỗi camera đảm nhiệm vai trò khác nhau. LG dùng camera thứ 2 để chụp ảnh góc rộng, Huawei dùng để chụp ảnh đen trắng trong khi Apple dùng nó để tạo ảnh xóa phông chuyên nghiệp cũng như hỗ trợ zoom quang học.
+Màn hình không viền
+ET News cũng cho biết S8 sẽ sở hữu viền màn hình siêu mỏng, đến mức có cảm giác như màn hình của máy phủ kín mặt trước. Khi đó, kích thước tổng thể của sản phẩm có thể sẽ giảm xuống, giúp người dùng cầm nắm thuận tiện hơn.
+Nút Home có một chút khác biệt
+Một số báo cáo cho rằng nút Home trên Samsung Galaxy S8 sẽ được tích hợp bên dưới mặt kính. Như vậy, Samsung có thể sẽ là nhà sản xuất tiếp theo "khai tử" nút Home vật lý trên flagship của mình sau Apple. Mới đây, Xiaomi Mi 5s (ảnh trên) cũng sử dụng thiết kế nút Home chìm tương tự tận dụng công nghệ siêu âm, giúp làm giảm tỉ lệ hỏng hóc của nút Home vật lý.
+Chip xử lý mạnh mẽ
+Với việc Apple cho phát hành con chip A10 cực mạnh mẽ trên bộ đôi iPhone mới, S8 chắc chắn không chịu kém cạnh. Chưa có thông tin cụ thể về dòng chip Exynos mới do hãng tự chế tạo, chỉ biết có thể nó mang tên gọi Exynos 8895. Trong khi đó, sẽ có một số phiên bản S8 sử dụng chip Qualcomm, có thể là Snapdragon 830.
+USB Type-C, loại bỏ giắc cắm tai nghe
+Gần như chắc chắn Galaxy S8 sẽ sử dụng chuẩn kết nối mới là USB Type-C. Giao thức kết nối này được trang bị trên này một nhiều sản phẩm và trở thành xu hướng không thể xóa bỏ. Trong khi đó, việc loại bỏ giắc cắm tai nghe sẽ giúp hãng có nhiều không gian bên trong máy hơn để tăng dung lượng pin hoặc các chi tiết đặc biệt khác.
+Ra mắt vào tháng 2, bán ra vào tháng 3
+Mới đây, thư mời tham dự sự kiện Unpacked 2017 của Samsung đã bị hé lộ. Theo đó, máy có thể ra mắt vào 26/2. Liền sau đó, model này sẽ bán ra vào tháng 3. Những tin đồn trước đây cho rằng Samsung sẽ giới thiệu sớm S8 để bù cho khoảng trống của Note 7. Tuy nhiên, điều này khó xảy ra.','2016-10-17 09:00:00',5,'TT1_1.jpg','TT1_2.jpg','TT1_3.jpg','TT1_4.jpg','TT1_5.jpg','TT1_6.jpg','TT1_7.jpg','TT1_8.jpg');
+
+
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4)VALUES('Oppo sắp ra mắt Oppo R9s kế nhiệm F1 Plus','Oppo F1 Plus là smartphone của Oppo đạt được nhiều thành công sau khi ra mắt. Trong thời gian tới, hãng lại tiếp tục cho ra mắt phiên bản kế nhiệm có tên Oppo R9s.','Oppo F1 Plus là smartphone của Oppo đạt được nhiều thành công sau khi ra mắt. Trong thời gian tới, hãng lại tiếp tục cho ra mắt phiên bản kế nhiệm có tên Oppo R9s.
+
+Cấu hình Oppo R9s tiếp tục được rò rỉ. Theo đó, Oppo tiết lộ thiết bị sẽ là một smartphone chuyên selfie như phiên bản tiền nhiệm trước đây. Hãng cũng đã gửi lời mời tham gia sự kiện ra mắt vào ngày 19/10 và sẵn sàng lên kệ vào cuối năm nay.
+Cấu hình Oppo R9s
+Theo kết quả thử nghiệm trên Geekbench, Oppo R9s dùng bộ vi xử lý Snapdragon 625 cho xung nhịp 2.02 GHz, dung lượng RAM 4GB. Qua bài chấm điểm hiệu suất đơn lõi và đa lõi cho thấy, Oppo R9s hoàn thành khá tốt với điểm số lần lượt là 848 và 3121.
+Một điều đáng tiếc duy nhất chính là Oppo vẫn trang bị cho R9s chạy trên nền tảng Android 6.0.1. Hi vọng, sau khi ra mắt thời gian ngắn, hãng sẽ nâng cấp sớm cho thiết bị lên hệ điều hành Android 7.0 mới nhất hiện nay.
+Oppo R9s sở hữu một chiếc camera trước có độ phân giải lên đến 13MP. Camera chính 16MP có khẩu độ f/1.7 và được trang bị tính năng chống rung quang học cao cấp. Màn hình R9s có kích thước 5,5 inch cho độ phân giải Full HD. Pin dung lượng 3010 mAh, tích hợp công nghệ sạc nhanh Super VOOC độc quyền của hãng.
+Thiết kế Oppo R9s
+Qua hình ảnh giới thiệu qua, ta vẫn còn quá ít thông tin chính xác. Tuy nhiên, thiết kế của Oppo R9s vẫn rất sang trọng với khung vỏ được làm từ kim loại nguyên khối với thân máy được thiết kế siêu mỏng.
+Về phong cách thiết kế và màu sắc, Oppo vẫn trung thành với những đặc điểm nhận dạng thương hiệu trước đây của mình.
+
+Giá bán dự kiến của Oppo R9s vào khoảng 1600NDT (5.4 triệu đồng). Sau khi ra mắt tại thị trường quê nhà, Oppo Việt Nam cũng sẽ nhanh chóng đưa thiết bị lên kệ ngay sau đó. Smartphone của Oppo vẫn được người dùng trẻ ưa chuộng vì thiết kế đẹp, tính năng phong phú nhưng có giá thành lại vô cùng hợp lý.
+','2016-10-19 04:51:00',5,'TT2_1.jpg','TT2_2.jpg','TT2_3.jpg','TT2_4.jpg');
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4,HINH5)VALUES('Vì sao iPhone 5S vẫn là smartphone đáng mua trong thời điểm này?','iPhone 5s kể từ khi ra mắt luôn là một smartphone đáng mua, được hầu hết người tiêu dùng ưa thích bởi một thiết kế tinh tế, màn hình hợp lý so với một smartphone và đặc biệt, máy vẫn đảm bảo hiệu năng sử dụng và trang bị cảm biến vân tay – một tính năng vốn được tích hợp lên nhiều smartphone cao cấp hiện nay.','iPhone 5s kể từ khi ra mắt luôn là một smartphone đáng mua, được hầu hết người tiêu dùng ưa thích bởi một thiết kế tinh tế, màn hình hợp lý so với một smartphone và đặc biệt, máy vẫn đảm bảo hiệu năng sử dụng và trang bị cảm biến vân tay – một tính năng vốn được tích hợp lên nhiều smartphone cao cấp hiện nay.
+Cùng tìm hiểu, tại sao iPhone 5S vẫn là smartphone đáng mua trong thời điểm này, khi bạn có trong tay khoảng hơn 6 triệu đồng?
+iPhone 5S sở hữu nhiều chuẩn mực của smartphone
+Thừa hưởng một thiết kế tinh tế với khung nhôm nguyên khối vốn có của iPhone 5, iPhone 5S ra đời đã làm đúng với bản sắc của Apple khi đảm nhận nhiệm vụ của phiên bản “S”. Thiết kế tinh xảo với các màu tùy chọn phong phú, iPhone 5S Gold được rất nhiều người lựa chọn, đặc biệt là phụ nữ.
+
+Màn hình vừa đủ, thoải mái sử dụng bằng một tay
+Màn hình 4 inch, mỏng 7,6 mm, nặng 112 gram - những thông số này cho thấy đây là chiếc smartphone duy nhất cho phép người dùng sử dụng thoải mái bằng một tay còn sót lại trên thị trường.
+Trang bị các tính năng hấp dẫn
+Đưa ra một luật chơi cố định và buộc khách hàng phải tuân theo, iPhone 5s đã tạo được sự thành công lớn với Touch ID, công nghệ cảm biến vân tay tiện lợi được tích hợp lần đầu tiên lên sản phẩm của hãng, dung lượng pin tăng lên một chút và đặc biệt là camera có tốc độ chụp tăng cao và sáng hơn rất nhiều. Theo đó, iPhone 5S được ra đời với các phiên bản 16/32/64Gb
+Được cập nhật hệ điều hành của iPhone 7
+Nếu phải chọn một chiếc iPhone 5S (ra đời từ năm 2013) và một chiếc smartphone Android khác cùng tầm giá,  không ít người sẽ nghiêng về sản phẩm của Apple.
+Trong khi một số hãng smartphone chậm cập nhật hệ điều hành cho smartphone thì iPhone 5s đã có thể nâng cấp lên iOS 10 giống với iPhone 7 và iPhone 7 Plus. Đây thực sự là một chính sách rất hay của Apple sau bán hàng khi vẫn còn hỗ trợ sản phẩm đã ra mắt kể từ năm 2013.
+Viettel Store bán iPhone 5S chỉ với 6.490.000 đồng?
+Không chỉ sở hữu các tính năng kể trên, khi mua iPhone 5S tại Viettel Store trong thời gian này, quý khách hàng còn nhận được vô vàn ưu đãi, cụ thể:
+- Ưu đãi trả góp lãi suất 0%, Kỳ hạn trả 6 tháng dành cho chủ thẻ tín dụng HSBC (Áp dụng từ 07/10 đến 31/12/2016) 
+- Giá bán: 6.490.000 đồng chỉ dành cho các khách hàng mua Online (Không áp dụng chung với các chương trình khuyến mại khác).
+- Trả góp lãi 1% FE Credit, trả trước 0 đồng theo giá bán 6.990.000 đồng.
+- Trả góp lãi 0% Home Credit theo giá bán 6.990.000 đồng (Trả trước 30%, trả góp trong 4 tháng).
+- Tặng Phiếu mua hàng Phụ kiện 100.000 đồng - Nhận ngay 5GB data/tháng trong 12 tháng, cước thuê bao 50.000 đồng/tháng, miễn phí cước tháng đầu tiên. (Áp dụng từ 07/10 đến 31/10/2016).','2016-10-19 03:1:00',5,'TT3_1.jpg','TT3_2.jpg','TT3_3.jpg','TT3_4.jpg','TT3_5.jpg');
+
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6)VALUES('Mách bạn 6 smartphone màu hồng tặng “gấu” ngày 20/10','Món quà là một chiếc smartphone cũng thể hiện sự tinh tế và quan tâm đến một nửa yêu thương trong ngày phụ nữ Việt Nam 20/10. Bạn đã có sự lựa chọn nào chưa? Dưới đây là 6 gợi ý cho bạn với những mẫu smartphone màu hồng và vàng hồng đặc biệt dành riêng cho phái nữ tuyệt đẹp, mời bạn đọc tham khảo.','Món quà là một chiếc smartphone cũng thể hiện sự tinh tế và quan tâm đến một nửa yêu thương trong ngày phụ nữ Việt Nam 20/10. Bạn đã có sự lựa chọn nào chưa? Dưới đây là 6 gợi ý cho bạn với những mẫu smartphone màu hồng và vàng hồng đặc biệt dành riêng cho phái nữ tuyệt đẹp, mời bạn đọc tham khảo.
+1. Samsung Galaxy S7 Edge Pink 
+Galaxy S7 Edge Pink Gold là bản nâng cấp về kích cỡ màn hình so với Galaxy S7. Máy đã đã tạo được ấn tượng rất tốt với giới công nghệ tại sự kiện Samsung Unpacked 2016 vừa qua bởi một màn hình 5,5 inch được tích hợp màn hình cong huyền diệu... Sản phẩm được đánh giá là sản phẩm cao cấp nhất của Samsung tính tới thời điểm hiện tại. Mặc dù có kiểu dáng không khác nhiều so với sản phẩm Galaxy S6 Edge tiền nhiệm nhưng Galaxy S7 Edge vẫn được giới công nghệ thốt lên những từ “lộng lẫy nhất”, “mạnh mẽ nhất”, “tinh tế nhất”.
+Ưu điểm khác: Cấu hình mạnh mẽ nhất | Camera khả năng chụp thiếu sáng trên cảm biến 12MP | Khả năng chống nước.
+2. Apple iPhone SE
+Ngôn ngữ thiết kế của iPhone SE được thừa hưởng trọn vẹn từ "tiền bối" iPhone 5s - vốn rất được lòng người dùng trong nhiều năm qua. Không những thế, iPhone SE còn có thêm phiên bản màu vàng hồng nhìn rất thời thượng. Còn hiệu năng thì mạnh mẽ hơn cả iPhone 6s.
+Ưu điểm khác: Cảm biến vân tay | Camera sau 12 MP quay phim 4K | Được cập nhật hệ điều hành thường xuyên và mới nhất.
+3. Samsung Galaxy A7 2016 
+Samsung Galaxy A7 2016 là phiên bản nâng cấp của chiếc Galaxy A5 2016 khi sở hữu màn hình lớn hơn và nâng cấp chút về cấu hình. Với thiết kế nguyên khối và tinh tế trong từng đường nét, Samsung Galaxy A7 2016 là một sự lựa chọn cực kỳ đáng giá ở phân khúc cận cao cấp trên thị trường hiện nay. 
+Ưu điểm khác: Cấu hình mạnh mẽ sử dụng chip Exynos | Chế độ chụp selfie thông minh bằng tay cùng khả năng chỉnh sửa ảnh độc đáo | Chế độ tiết kiệm pin thông minh.
+4. Oppo F1 Plus 
+Oppo F1 Plus là chiếc smartphone có kiểu dáng đẹp và sang trọng, nổi bật hơn khá nhiều so với các smartphone cùng phân khúc đang có trên thị trường. Chiếc máy gây ấn tượng mạnh với viền màn hình siêu mỏng chỉ 1,66 mm, cùng camera trước 16 “chấm”.
+Ưu điểm khác: vi xử lý tám nhân MT6755 Octa – Core, Ram 4GB | Thiết kế phẳng với độ mỏng đầy ấn tượng | màn hình 5.5'' sử dụng công nghệ AMOLED
+5. Sony Xperia XA  
+Xperia XA có bốn màu, bao gồm đen khói, trắng hoặc hai màu vàng mới rất đẹp - vàng ánh kim và vàng hồng. Máy kết hợp hài hòa màu sắc ở cả mặt sau, mặt trước và màu màn hình của điện thoại. Cùng với đó là mặt kính được vát cong 2.5D và viền màn hình siêu mỏng nên nhìn máy rất "sexy".
+Ưu điểm khác: Chạy Android 6.0 Marshmallow | Camera trước 8 MP + camera sau 13 MP | Hỗ trợ 4G, NFC và OTG.
+6. Samsung Galaxy A3 2016 
+Galaxy A3 2016 có thiết kế nhỏ gọn với màn hình 4.7 inch, rất thích hợp các bạn nữ vốn có đôi bàn tay nhỏ sử dụng. Bên cạnh đó, máy còn có nhiều phiên bản màu để bạn lựa chọn, nổi bật nhất vẫn là màu hồng và vàng đồng sang trọng.
+Ưu điểm khác: Được cập nhật lên Android 6.0 Marshmallow | Camera trước 5 MP + camera sau 13 MP | Hỗ trợ 4G, NFC và OTG.
+Hi vọng với 6 gợi ý smartphone màu hồng trong bài viết này sẽ giúp ích được cho bạn trong việc chọn một món quà thật ý nghĩa nhân ngày phụ nữ Việt Nam 20/10!','2016-10-19 01:31:00',5,'TT4_1.jpg','TT4_2.jpg','TT4_3.jpg','TT4_4.jpg','TT4_5.jpg','TT4_6.jpg');
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4)VALUES('Galaxy A5 2017 lộ diện với chipset mới và thiết kế siêu đẹp','Những thông tin rò rỉ về cấu hình Galaxy A5 2017 vừa được lộ diện. Theo đó, chiếc máy này sẽ mạnh mẽ hơn nhiều so với thế hệ tiền nhiệm.',
+'Những thông tin rò rỉ về cấu hình Galaxy A5 2017 vừa được lộ diện. Theo đó, chiếc máy này sẽ mạnh mẽ hơn nhiều so với thế hệ tiền nhiệm.
+Cấu hình Galaxy A5 2017 không chỉ bị lộ trên Geekbench mà những thiết kế đầu tiên của chiếc smartphone cũng vừa bị rò rỉ. Qua đó có thể hình dung ra chiếc máy này sẽ là phiên bản rút gọn của flagship Galaxy S7 đình đám của nhà Samsung
+Cấu hình Galaxy A5 2017 sẽ rất đáng gờm
+Mới đây, trên hệ thống Geekbench vừa xuất hiện những thông tin rò rỉ được cho là sản phẩm Galaxy A5 2017. Cụ thể, chiếc máy này có thể sẽ được trang bị chip Exynos 7880 mạnh hơn đáng kể so với Exynos 7580 trên Galaxy A5 2016. Đi cùng với chipset mới là GPU Mali T830 và RAM được nâng từ 2GB lên 3GB giúp A5 2017 chạy đa nhiệm và các tác vụ mượt hơn rất nhiều. Đặc biệt, Galaxy A5 2017 sẽ được tích hợp cổng kết nối USB Type-C mới giúp tăng tốc độ kết nối dữ liệu và sử dụng thuận tiện hơn.
+Nếu sức mạnh của CPU được cải tiến nhiều thì camera của A5 2017 có khá ít sự thay đổi. Máy sẽ có camera chính 16MP khẩu độ f/1.9 sẽ giúp cải thiện khả năng chụp ảnh trong môi trường thiếu sáng. Ngoài ra, viên pin của A5 dường như không thay đổi với dung lượng 2.900mAh tương tự như "đàn anh".
+Gần đây nhất, Galaxy A5 2017 đã đạt chứng nhận Wifi với 2 tên mã là SM-A520F (1 SIM) và SM-A520F/DS (2 SIM). Trước đó, Galaxy A5 2017 đã bị phát hiện đang được thử nghiệm tại Ấn Độ và cũng với tên mã tương tự. Smartphone này sẽ chạy trên nền tảng Android 6.0 lúc ra mắt nhưng có thể sẽ được cập nhật sớm lên Android 7.0 Nougat mới nhất
+Thiết kế đẳng cấp như dòng Galaxy S
+Theo những hình ảnh rò rỉ, thiết kế của A5 2017 có nét tương đồng với Galaxy S7 với cạnh dọc lưng máy được vê cong mép và màn hình 2,5D ở mặt trước. Điều này khá dễ hiểu khi Samsung thường đem thiết kế của flagship năm trước lên dòng máy tầm trung cận cao cấp của năm sau.
+Theo dự kiến, cuối năm nay Samsung sẽ chính thức giới thiệu Galaxy A5 2017 cùng các model dòng A series khác như A3, A7 và A8. Với thiết kế cao cấp hơn và cấu hình Galaxy A5 2017 được nâng cấp, liệu chiếc máy này có làm hài lòng người dùng? Cùng chờ xem nhé!
+','2016-10-20 03:00:00',5,'TT5_1.jpg','TT5_2.jpg','TT5_3.jpg','TT5_4.jpg');
+
+
+/*
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4,HINH5)VALUES('Những tính năng được yêu thích nhất trên Note 7 sẽ được Samsung đưa lên Galaxy S7 và S7 edge','Galaxy Note 7 tuy bị khai tử nhưng điều đó không có nghĩa là các tính năng hay ho của chiếc smartphone này sẽ biến mất. Samsung cũng muốn làm giảm bớt đi phần nào nỗi hụt hẫng với các fan của mình bằng cách đưa những tính năng hay nhất của Note 7 lên Galaxy S7 và Galaxy S7 edge.','Galaxy Note 7 tuy bị khai tử nhưng điều đó không có nghĩa là các tính năng hay ho của chiếc smartphone này sẽ biến mất. Samsung cũng muốn làm giảm bớt đi phần nào nỗi hụt hẫng với các fan của mình bằng cách đưa những tính năng hay nhất của Note 7 lên Galaxy S7 và Galaxy S7 edge.
+Tất nhiên các tính năng này không bao gồm khả năng “cháy nổ” của Note 7. Bản cập nhật v1.4.02 đầu tiên mà Samsung vừa phát hành cho Galaxy S7/S7 edge bao gồm tính năng Always on Display, giao diện lịch mới và khả năng tùy chỉnh giao diện đồng hồ với chữ ký riêng.
+Samsung cho biết tính năng Always on Display trên Galaxy S7/S7 edge sẽ chỉ tiêu hao khoảng 1% pin mỗi giờ, do đó nó không ảnh hưởng quá nhiều tới thời lượng sử dụng pin của thiết bị.
+Bạn có thể tùy chỉnh khá nhiều thứ trên màn hình Always on Display này, như đồng hồ, ngày tháng, thông báo hay hình ảnh và chữ ký đại diện. Ngoài ra, Always on Display còn có thể hiển thị bài hát mà bạn đang nghe, rất tiện lợi nếu bạn muốn chuyển bài.
+Để cập nhật tính năng này, bạn có thể vào Settings>Display>Always On Display> About Always On Display>Update. Samsung cũng cho biết đây mới chỉ là bản cập nhật đầu tiên mang các tính năng của Note7 lên Galaxy S7 và S7 edge, có nghĩa là trong tương lai sẽ còn nhiều bản cập nhật tính năng khác nữa.
+','2016-10-17 08:00:00',5,'TT6_1.jpg','TT6_2.jpg','TT6_3.jpg','TT6_4.jpg','TT6_5.jpg');
+*/
+
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4,HINH5)VALUES('Ưu đãi chưa từng có khi mua Galaxy S7 Edge màu “hường” tại Viettel Store','Galaxy S7 Edge Pink Gold kể từ khi ra mắt luôn là một smartphone rất đáng mua. Đáng mua không chỉ vì tính năng vượt trội, thiết kế tinh tế..., chiếc smartphone này còn được mệnh danh là một thứ quà tặng sang trọng, lịch sự dành riêng cho phái đẹp, nhất là trong dịp kỷ niệm ngày Phụ nữ Việt Nam 20/10 năm nay.','
+Galaxy S7 Edge Pink Gold kể từ khi ra mắt luôn là một smartphone rất đáng mua. Đáng mua không chỉ vì tính năng vượt trội, thiết kế tinh tế..., chiếc smartphone này còn được mệnh danh là một thứ quà tặng sang trọng, lịch sự dành riêng cho phái đẹp, nhất là trong dịp kỷ niệm ngày Phụ nữ Việt Nam 20/10 năm nay.
+Đồng hành cùng ngày Phụ nữ Việt Nam 20/10, Viettel Store tung ra các chương trình ưu đãi đặc biệt đối với khách hàng mua Galaxy S7 Edge Pink Gold. Cùng tìm hiểu về tính năng, thông số kỹ thuật và những ưu đãi khi sở hữu món quà tặng sang trọng này trong “ngày của chị em” các bạn nhé..
+Galaxy S7 Edge là một trong những smartphone màu vàng hồng đẹp nhất
+Smartphone màu vàng hồng đang dần trở thành một trào lưu trong một vài năm trở lại đây khi bên cạnh những màu truyền thống, các nhà sản xuất thường có thêm một phiên bản màu này dành cho phái đẹp. Và để theo kịp trào lưu đó, mới đây Samsung đã bổ sung phiên bản màu hồng vàng (Pink Gold Edition) đầy quyến rũ cho chiếc Galaxy S7 Edge để nhắm đến các nhóm khách hàng là phái nữ.
+So với những smartphone vàng hồng khác, di động của Samsung trông bóng bẩy và tinh tế hơn do được phủ một lớp kính cường lực bên ngoài. Kết hợp với những đường cong trên máy, Galaxy S7 Edge màu vàng hồng trông rất hấp dẫn khi được ánh sáng chiếu vào
+Toàn bộ khung máy cũng được phủ màu vàng hồng. Mọi chi tiết trên máy đều được giữ nguyên, Samsung chỉ thay đổi về màu sắc bên ngoài của máy
+Cấu hình, trang bị cao cấp – Đáng để chị em trải nghiệm
+Ngoài màu sắc, Samsung Galaxy S7 Edge vàng hồng không có gì thay đổi về cấu hình và những trang bị đi kèm. Model này hiện vẫn nằm trong top những smartphone có cấu hình mạnh nhất hiện nay với màn hình Super AMOLED 5.1 inch độ phân giải Quad HD, chip Exynos 8890, RAM 4 GB. Máy hỗ trợ 2 sim, bộ nhớ trong 32 GB, kèm thẻ nhớ 200GB.
+Đặc biệt, máy cũng có khả năng chống bụi, chống nước theo tiêu chuẩn IP68. Ngoài ra, máy vẫn sở hữu bộ đôi camera có độ phân giải 12 MP/ 5 MP được trang bị công nghệ Dual Pixel, cùng với viên pin có dung lượng 3.600 mAh có hỗ trợ sạc nhanh có dây và không dây.
+Ưu đãi hấp dẫn chưa từng có khi mua Galaxy S7 Edge Pink Gold tại Viettel Store
+Nhằm tạo điều kiện để chị em có dịp trải nghiệm siêu phẩm này một cách dễ dàng và giúp đấng mày râu tối ưu chi phí... Viettel Store triển khai chương trình ưu đãi đặc biệt cho khách hàng. 
+Cụ thể, khi mua sản phẩm Galaxy S7 Edge Pink Gold quý khách hàng sẽ được giảm ngay 1,5 triệu đồng (từ 18.490.000 đồng xuống còn 16.990.000 đồng) và tặng phiếu mua hàng phụ kiện trị giá 700.000 đồng trong ngày hôm nay (20/10).
+Quý khách hãy đến ngay Viettel Store để đặt hàng trực tiếp, đặt hàng online tại đây hoặc gọi đến tổng đài 18008123 để được tư vấn về chương trình.
+','2016-10-20 02:02:00',5,'TT6_1.jpg','TT6_2.jpg','TT6_3.jpg','TT6_4.jpg','TT6_5.jpg');
+
+
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2)VALUES('Đúng 1 tuần nữa sẽ diễn ra sự kiện lớn ra mắt sản phẩm mới của Apple','Ngày 27/10 tới đây Apple sẽ tổ chức ra mắt sự kiện ra mắt MacBook Pro. Ngoài ra, MacBook Air cũng sẽ được nâng cấp.','Ngày 27/10 tới đây Apple sẽ tổ chức ra mắt sự kiện ra mắt MacBook Pro. Ngoài ra, MacBook Air cũng sẽ được nâng cấp.
+Apple cách đây ít giờ đã chính thức gửi đi thư mời cho sự kiện tiếp theo của mình trong năm 2016. Cụ thể, thư mời nêu rõ sự kiện sẽ được diễn ra vào ngày 27 tháng 10 (giờ địa phương) cùng thông điệp "hello again" và hình ảnh một trái táo cắn dở được cách điệu. Sự kiện này sẽ được tổ chức tại trụ sở Apple (số 1 Infinite Loop). Trụ sở phi thuyền Campus 2 dự kiến sẽ mở cửa vào đầu năm 2017. Do đó, đây có thể là sự kiện lớn cuối cùng được tổ chức tại trụ sở cũ của Apple.
+Mùa thu năm ngoái, Apple chỉ tổ chức đúng một sự kiện sản phẩm duy nhất để giới thiệu toàn bộ những gì mình đang ấp ủ, từ iPhone cho tới iPad. Tuy nhiên, sự kiện diễn ra vào tháng 9 năm nay chỉ có tiêu điểm là chiếc iPhone 7/ 7 Plus và đồng hồ Apple Watch series 2. Người dùng vẫn chưa được đón nhận các thông tin liên quan tới máy tính Mac hay máy tính bảng iPad.
+Thư mời này khẳng định những tin đồn trước đó, cho rằng Apple sẽ tái thiết kế mạnh mẽ dòng sản phẩm MacBook Pro. Những thay đổi lớn trên dòng laptop cao cấp của Apple bao gồm dài touch bar OLED thay thế phím chức năng cũ. Tính năng này có thể được gọi là Control Strip. Bên cạnh đó, đây có thể là dòng MacBook đầu tiên của Apple trang bị tính năng nhận diện vân tay Touch ID. Tích hợp tính năng này, MacBook Pro sẽ cung cấp giải pháp đăng nhập bảo mật hơn, đồng thời hỗ trợ thanh toán qua Apple Pa
+Cuối cùng, MacBook Pro được cho là sẽ sử dụng cổng USB-C, khai tử hàng loạt chuẩn kết nối như USB-A, HDMI và đầu đọc thẻ nhớ SD.
+Phiên bản MacBook Air 13 inch cũng sẽ được nâng cấp. Tuy nhiên, thay đổi trên dòng sản phẩm này có thể không lớn. Với việc MacBook Retina 12 inch đang là sản phẩm chủ lực của Apple, nhiều khả năng hãng sẽ khai tử dòng Air 11 inch.
+Trước đây, Apple thường dùng sự kiện tháng 10 để giới thiệu iPad mới. Tuy nhiên, gần đây hãng có xu hướng chuyển sang mùa xuân. Như vậy, người dùng có thể phải đợi đến tháng 3 năm sau để chứng kiến bản nâng cấp của dòng iPad Pro cũng như iPad mini.
+','2016-10-20 11:00:00',5,'TT7_1.jpg','TT7_2.jpg');
+
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3)VALUES('Chính thức ra mắt LG V34 – Smartphone kế nhiệm LG V20','Được cho là sản phẩm kế nhiệm chiếc LG V20 đình đám ngày nào, LG V34 sở hữu nhiều tính năng cao cấp hơn cả LG V20, thậm chí là vượt trội hơn cả chiếc G5 -  flagship của LG ra mắt đầu năm nay.
+Tên đầy đủ của sản phẩm là LG V34 isai Beat. Được biết đây không phải là flagship của LG mà chỉ là sản phẩm phân phối độc quyền tại thị trường Nhật Bản. LG có tiền lệ cung cấp những smartphone chịu nước cho thị trường Nhật Bản – nơi mà khách hàng rất coi trọng tính năng này, V34 isai Beat là một sản phẩm như vậy.','Được cho là sản phẩm kế nhiệm chiếc LG V20 đình đám ngày nào, LG V34 sở hữu nhiều tính năng cao cấp hơn cả LG V20, thậm chí là vượt trội hơn cả chiếc G5 -  flagship của LG ra mắt đầu năm nay.
+Tên đầy đủ của sản phẩm là LG V34 isai Beat. Được biết đây không phải là flagship của LG mà chỉ là sản phẩm phân phối độc quyền tại thị trường Nhật Bản. LG có tiền lệ cung cấp những smartphone chịu nước cho thị trường Nhật Bản – nơi mà khách hàng rất coi trọng tính năng này, V34 isai Beat là một sản phẩm như vậy.
+
+Chống nước là điều kiện tiên quyết dành cho smartphone tại Nhật Bản
+LG V34 cao cấp hơn V20 và G5 ở khả năng chịu nước theo chuẩn IP67 (chìm 1m nước trong 30 phút). Tính năng này đang được nhiều người coi là điều kiện kiên quyết để lựa chọn điện thoại, đặc biệt ở thị trường Nhật Bản.
+LG V34 sẽ là sự lựa chọn phù hợp hơn với những ai muốn có một chiếc smartphone màn hình 5,2 inch vừa phải, cấu trúc bền bỉ, hiệu năng cao, hỗ trợ giải trí đẳng cấp.
+Tất nhiên, LG V34 chỉ được phát hành cho thị trường nội địa Nhật Bản và được độc quyền bởi Au Japan. Thiết bị này sẽ lên kệ vào giữa tháng Mười Một với tùy chọn màu Titan và vàng.
+Cấu hình LG V34 khác gì V20, G5?
+Cũng như V20, V34 vẫn được LG trang bị màn hình 2K cỡ 5,2 inch, tấm nền IPS, màn hình phụ, vi xử lý Snapdragon 820, RAM 4GB, bộ nhớ trong 32GB kèm khe cắm thẻ nhớ. Các mô-đun khác cũng khá quen thuộc như chip QuadDAC, hệ thống âm thanh Bang & Olufsen, camera kép 16MP/ 8MP ở phía sau và 8MP góc siêu rộng ở phía trước, cảm biến vân tay ở mặt lưng, pin 3.000mAh và cài sẵn Android 7.0 khi xuất xưởng. 
+Theo tìm hiểu, có hai sự khác biệt cơ bản giữa LG V20 và LG V34. Thứ nhất, màn hình của LG V34 chỉ có kích thước 5.2 inch và độ phân giải 1440 x 2560 pixel. Thứ 2, LG V34 đáp ứng tiêu chuẩn IP67 cho khả năng kháng bụi, nước và đây là một nâng cấp đáng kể so với LG V20.
+Với nhiều tính năng cao cấp và vượt trội hơn cả chiếc flagship của LG, hi vọng rằng V34 sẽ phục vụ tốt cho nhu cầu sử dụng thiết yếu của khách hàng tại xử sở Mặt trời mọc.
+','2016-10-19 10:00:00',5,'TT8_1.jpg','TT8_2.jpg','TT8_3.jpg');
+
+
+
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3)VALUES('Có phải Galaxy S8 là siêu phẩm duy nhất của Samsung trong năm 2017?','Có phải Galaxy S8 là siêu phẩm duy nhất của Samsung trong năm 2017?
+Thông tin về Galaxy S8 những ngày qua cũng cho biết đây có thể là smartphone siêu phẩm duy nhất của Samsung sẽ ra mắt trong năm 2017. Chính vì điều này nên ông lớn Hàn Quốc đang gấp rút sản xuất phần mềm và phần cứng và đảm bảo tiêu chuẩn để ra mắt thị trường.
+Samsung tập trung mạnh vào smartphone cao cấp dòng S','Có phải Galaxy S8 là siêu phẩm duy nhất của Samsung trong năm 2017?
+Thông tin về Galaxy S8 những ngày qua cũng cho biết đây có thể là smartphone siêu phẩm duy nhất của Samsung sẽ ra mắt trong năm 2017. Chính vì điều này nên ông lớn Hàn Quốc đang gấp rút sản xuất phần mềm và phần cứng và đảm bảo tiêu chuẩn để ra mắt thị trường.
+Samsung tập trung mạnh vào smartphone cao cấp dòng S
+Nhiều dự đoán mới đây cho rằng Samsung sẽ không chỉ ngừng sản xuất sản phẩm Note mới mà thậm chí còn cho ra đời một siêu phẩm duy nhất trong năm 2017: Galaxy S8.
+Có lẽ, đây không phải là lần đầu tiên chúng ta nghe thấy thông tin về việc Samsung sẽ sẽ bỏ hẳn thương hiệu Note sau sự cố với chiếc Note 7. Tin đồn mới lần này, xuất phát từ trang Newis thậm chí còn khẳng định rằng Samsung đang chấn chỉnh lại toàn bộ chiến lược di động năm 2017 để đảm bảo chất lượng sản phẩm.
+Ngoài ra, theo hãng tin Korea Herald, ban lãnh đạo Samsung đang cảnh báo toàn bộ nhân viên và cả các nhà cung cấp linh kiện ngăn chặn bất kỳ thông tin rò rỉ nào liên quan đến Galaxy S8. Trong một email nội bộ, Samsung đã yêu cầu nhân viên của mình đề cao các biện pháp an ninh, ngăn chặn rò rỉ bí mật hoạt động.
+
+Samsung đang phát triển chip và phần mềm cho Galaxy S8
+SamMobile cho biết Samsung đang bắt đầu phát triển các bản ROM cho Galaxy S8, đầu tiên là các bản ROM nội địa của TQ, Pháp, Đức, ý, Hàn Quốc, Ba Lan, Anh và Mỹ, sau đó có thể sẽ đến các quốc gia khác. Thông tin Samsung đang bắt đầu phát triển ROM cho S8 khá quan trọng vì nó giúp chúng ta hình dung thời điểm máy sẽ được giới thiệu. 
+Cũng theo một nguồn tin khác, trong nỗ lực đẩy nhanh tiến độ ra mắt Galaxy S8 mới, hãng điện tử Hàn Quốc hôm nay cho biết đã khởi động dây chuyền sản xuất các sản phẩm SoC với công nghệ FinFet 10nm - sử dụng cho thế hệ điện thoại tiếp theo. Với quy trình sản xuất nhỏ hơn, các SoC 10nm được kì vọng sẽ nhanh hơn khoảng 27% và tiết kiệm điện hơn 40% so với thế hệ 14nm hiện nay.
+
+','2016-10-20 08:55:00',5,'TT9_1.jpg','TT9_2.jpg','TT9_3.jpg');
+INSERT INTO TINTUC(TIEUDE,TOMTAT,NOIDUNG,NGAYDANG,LOAITIN,HINH1,HINH2,HINH3,HINH4)VALUES('Nokia sẽ trở lại cuộc chơi smartphone vào năm 2017','CEO Rajeev Suri đã xác nhận smartphone mới của Nokia sẽ sớm trở lại thị trường điện thoại 2017.
+Smartphone mới của Nokia dự định sẽ được ra mắt tại sự kiện triển lãm MWC 2017 tại Tây Ban Nha. Hiện tại, hãng cũng đã có những động thái rõ ràng khẳng định sẽ ra ít nhất 2 thiết bị chạy Android. Đây là một tin vui đối với những người dùng đã từng là Fan hâm mộ của Nokia.','CEO Rajeev Suri đã xác nhận smartphone mới của Nokia sẽ sớm trở lại thị trường điện thoại 2017.
+Smartphone mới của Nokia dự định sẽ được ra mắt tại sự kiện triển lãm MWC 2017 tại Tây Ban Nha. Hiện tại, hãng cũng đã có những động thái rõ ràng khẳng định sẽ ra ít nhất 2 thiết bị chạy Android. Đây là một tin vui đối với những người dùng đã từng là Fan hâm mộ của Nokia.
+Trở về quá khứ năm 2013, Nokia đã bị Microsoft mua lại với giá 7,2 tỷ USD, trong đó có điều khoản ràng buộc cho đến tận bây giờ mới kết thúc về việc Nokia sản xuất smartphone. Điều đó đồng nghĩa với việc hãng sẽ trở lại mảng thiết bị di động trong năm nay, khi hợp đồng đó hết hiệu lực.
+CEO của Nokia – Ông Rajeev Suri từng tiết lộ, hãng đang có kế hoạch quay trở lại thị trường điện thoại cao cấp. Tuy nhiên, thông tin cấu hình và tính năng không được cung cấp gì thêm
+Một số thông tin rò rỉ gần đây cho biết, Nokia sẽ phát triển đến 2 chiếc smartphone mới với thiết kế kim loại nguyên khối cao cấp. Màn hình có kích thước dự đoán lần lượt là 5,2 và 5,5 inch, sử dụng màn hình OLED cho độ phân giải QHD. Máy còn có khả năng chống bụi, chống nước theo chuẩn IP68 cao nhất hiện nay.
+Về hệ điều hành sử dụng trên 2 thiết bị sắp tới, khả năng lớn Nokia sẽ chọn Android 7.0 mới nhất được tùy biến giao diện Z Launcher thay vì tiếp tục trung thành với Windows Phone hay trở về với Symbian “cây nhà lá vườn”.
+Đặc biệt hơn cả, Nokia sẽ giới thiệu một loại vật liệu mới có tên Graphene. Đây là loại vật liệu độc quyền của hãng được làm từ carbon nguyên chất, hỗ trợ cho tính năng cảm biến vân tay siêu nhạy. 
+Điều mà Nokia cần làm hiện nay là tìm một đối tác để sản xuất phần cứng cho thiết bị. Hãng chỉ chịu trách nhiệm phần thiết kế và chất lượng sản phẩm, tương tự như cách làm với chiếc Tablet N1 trước đây. Bộ đôi smartphone mới của Nokia hiện vẫn chưa có tên chính thức.
+','2016-10-19 10:32:00',5,'TT10_1.jpg','TT10_2.jpg','TT10_3.jpg','TT10_4.jpg');
+
+
+
+
+
+/*SANPHAM 1 dòng, nhớ xuống dòng y như trong trang tin tức nha ong*/
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP1','iPhone 6S 16GB',1,1,2,2,15990000,1,'SP1_1.JPG','SP1_1.JPG','SP1_2.JPG','SP1_3.JPG','SP1_4.JPG','SP1_5.JPG','SP1_6.JPG','SP1_7.JPG','SP1_8.JPG','SP1_9.JPG','SP1_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP2','iPhone 6S 64GB',1,1,2,2,17990000,2,'SP2_1.JPG','SP2_1.JPG','SP2_2.JPG','SP2_3.JPG','SP2_4.JPG','SP2_5.JPG','SP2_6.JPG','SP2_7.JPG','SP2_8.JPG','SP2_9.JPG','SP2_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP3','iPhone 6S Plus 16GB',1,1,2,2,18990000,3,'SP3_1.JPG','SP3_1.JPG','SP3_2.JPG','SP3_3.JPG','SP3_4.JPG','SP3_5.JPG','SP3_6.JPG','SP3_7.JPG','SP3_8.JPG','SP3_9.JPG','SP3_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP4','Samsung Galaxy A5 2016 (A510)',1,2,1,2,7990000,4,'SP4_1.JPG','SP4_1.JPG','SP4_2.JPG','SP4_3.JPG','SP4_4.JPG','SP4_5.JPG','SP4_6.JPG','SP4_7.JPG','SP4_8.JPG','SP4_9.JPG','SP4_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP5','Samsung Galaxy J2',1,2,1,2,2990000,5,'SP5_1.JPG','SP5_1.JPG','SP5_2.JPG','SP5_3.JPG','SP5_4.JPG','SP5_5.JPG','SP5_6.JPG','SP5_7.JPG','SP5_8.JPG','SP5_9.JPG','SP5_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP6','Samsung Galaxy J7 (2016)',1,2,1,2,5790000,6,'SP6_1.JPG','SP6_1.JPG','SP6_2.JPG','SP6_3.JPG','SP6_4.JPG','SP6_5.JPG','SP6_6.JPG','SP6_7.JPG','SP6_8.JPG','SP6_9.JPG','SP6_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP7','SamSung GalaxyJ5',1,2,1,2,3790000,7,'SP7_1.JPG','SP7_1.JPG','SP7_2.JPG','SP7_3.JPG','SP7_4.JPG','SP7_5.JPG','SP7_6.JPG','SP7_7.JPG','SP7_8.JPG','SP7_9.JPG','SP7_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP8','SamSung GalaxyJ7',1,2,1,2,4790000,8,'SP8_1.JPG','SP8_1.JPG','SP8_2.JPG','SP8_3.JPG','SP8_4.JPG','SP8_5.JPG','SP8_6.JPG','SP8_7.JPG','SP8_8.JPG','SP8_9.JPG','SP8_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP9','SamSung GalaxyJ7Prime',1,2,1,2,6290000,9,'SP9_1.JPG','SP9_1.JPG','SP9_2.JPG','SP9_3.JPG','SP9_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP10','SamSung Galaxy Note5',1,2,1,2,13990000,10,'SP10_1.JPG','SP10_1.JPG','SP10_2.JPG','SP10_3.JPG','SP10_4.JPG','SP10_5.JPG','SP10_6.JPG','SP10_7.JPG','SP10_8.JPG','SP10_9.JPG','SP10_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP11','Laptop Asus F555LF - XX166D',2,9,5,2,11990000,11,'SP11_1.JPG','SP11_1.JPG','SP11_2.JPG','SP11_3.JPG','SP11_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP12','Laptop Dell 5448 - RJNPG1',2,20,5,2,13990000,12,'SP12_1.JPG','SP12_1.JPG','SP12_2.JPG','SP12_3.JPG','SP12_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP13','Laptop Dell INS3558 - 70062972',2,20,5,2,14990000,13,'SP13_1.JPG','SP13_1.JPG','SP13_2.JPG','SP13_3.JPG','SP13_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP14','MacBook Air (2015) - MJVE2 - 70062972',2,1,4,2,22990000,14,'SP14_1.JPG','SP14_1.JPG','SP14_2.JPG','SP14_3.JPG','SP14_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP15','Macbook Pro 15.4 512GB (Retina Display)',2,1,4,2,59990000,15,'SP15_1.JPG','SP15_1.JPG','SP15_2.JPG','SP15_3.JPG','SP15_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP16','Ipad Air 2 4G 32GB',3,1,2,2,12490000,16,'SP16_1.JPG','SP16_1.JPG','SP16_2.JPG','SP16_3.JPG','SP16_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP17','IPad mini 4 Cellular 16Gb 4G',3,1,2,2,11490000,17,'SP17_1.JPG','SP17_1.JPG','SP17_2.JPG','SP17_3.JPG','SP17_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3) VALUES('SP18','IPad mini 4 Cellular 64GB 4G',3,1,2,2,13490000,18,'SP18_1.JPG','SP18_1.JPG','SP18_2.JPG','SP18_3.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP19','IPad Pro Wi-Fi 4G 128GB 4G',3,1,2,2,10990000,19,'SP19_1.JPG','SP19_1.JPG','SP19_2.JPG','SP19_3.JPG','SP19_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP20','Samsung Tab T819',3,2,1,2,23990000,20,'SP20_1.JPG','SP20_1.JPG','SP20_2.JPG','SP20_3.JPG','SP20_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP21','Bộ phát Wireless di động TP LINK M5250',4,1280000,21,'SP21_1.JPG','SP21_1.JPG','SP21_2.JPG','SP21_3.JPG','SP21_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1) VALUES('SP22','Gói dịch vụ giám sát trẻ em Kiddy (KID30)',4,65000,22,'SP22_1.JPG','SP22_1.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3) VALUES('SP23','Sạc dự phòng Xphone 5200mAh XPL5',4,300000,23,'SP23_1.JPG','SP23_1.JPG','SP23_2.JPG','SP23_3.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3) VALUES('SP24','Thẻ nhớ microSDHC Adata 8GB Class4',4,100000,24,'SP24_1.JPG','SP24_1.JPG','SP24_2.JPG','SP24_3.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3) VALUES('SP25','Thẻ nhớ Silicon Power Micro 8GB SDHC',4,100000,25,'SP25_1.JPG','SP25_1.JPG','SP25_2.JPG','SP25_3.JPG');
+/*MAUSP mỗi sp có nhiều màu và mỗi màu có nhiều sp nên quan hệ nhiều-nhiều nên đem ra bảng mauSP nha ong*/
+
+INSERT INTO MAUSP(MAMAU,MASP) VALUES(3,'SP1');
+INSERT INTO MAUSP(MAMAU,MASP) VALUES(4,'SP1');
+
+/*DACDIEMNOIBAT*/
+
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8) VALUES(1,'SP1','Apple iPhone 6s: Tinh tế trong từng đường nét
+
+iPhone 6s là siêu phẩm của Apple được nâng cấp đặc biệt từ “người tiền nhiệm” iPhone 6 và lược bỏ toàn bộ những điểm yếu mà tất cả iPhone đời trước mắc phải. Không chỉ mạnh mẽ về cấu hình, đa dạng về màu sắc, iPhone 6s với công nghệ cảm ứng lực thông minh còn tạo nên một xu hướng tìm kiếm bùng nổ mạnh mẽ trên internet trong suốt thời gian qua.
+Thiết kế tinh tế với chất liệu nhôm siêu bền
+
+Về mặt thiết kế, iPhone 6s/6s Plus sử dụng lớp vỏ hợp kim nhôm 7000, chất liệu đang được sử dụng trong ngành công nghiệp hàng không vũ trụ, cho độ bền và cứng cáp hơn so với các đời iPhone trước. 
+Ngoài ra với sự đa dạng về màu sắc cũng chính là điểm nhấn tạo nên những thành công về thiết kế của iPhone 6s so với bất kỳ chiếc iPhone nào khác. Có lẽ Apple cũng không thể tin được rằng, iPhone 6s phiên bản vàng hồng lại “hot” và “hút” khách đến vậy...
+Tính năng 3D Touch tiện dụng hơn bao giờ hết
+
+Là chiếc điện thoại đầu tiên được trang bị màn hình cảm ứng 3D theo lực chạm (chạm mạnh hoặc chạm nhẹ) giúp bạn có những trải nghiệm khác biệt và làm được mọi thứ trên iPhone 6s. Ngoài ra, cảm biến vân tay thế hệ thứ 2 giúp iPhone 6s nhanh hơn, nhạy hơn so với thế hệ cũ, tốc độ xử lý dưới 0.5s.
+Với các ứng dụng có hỗ trợ công nghệ 3D Touch, thao tác nhấn mạnh cho phép chúng ta tùy chọn các lối tắt tính năng ngay từ màn hình chính, thay vì phải truy cập trực tiếp vào ứng dụng đó. Đơn cử như việc tạo ra một liên hệ mới, chúng ta chỉ cần nhấn mạnh ngón tay vào biểu tượng gọi điện để thực hiện thao tác này, thay vì nhấn thẳng vào ứng dụng gọi điện, chọn danh bạ và thêm liên hệ như thông thường.
+Thời điểm hiện tại, Apple đã cung cấp rất nhiều ứng dụng hỗ trợ công nghệ 3D Touch dành cho iPhone 6s giúp bạn khai thác và trải nghiệm “siêu phẩm 2015” một cách hoàn hảo.
+Cấu hình mạnh mẽ nâng cao trải nghiệm với iOS 9
+
+Đã trở thành bản sắc của Apple, “ông trùm quả táo” không chia sẻ quá nhiều về cấu hình cũng như dung lượng Ram, nhưng Apple cho biết trên iPhone 6s được trang bị Chip A9-64 bit. Bộ vi xử lý A9 mới với hiệu năng mạnh mẽ, nhanh hơn 70% và xử lý đồ hoạ tốt hơn 90% so với phiên bản iPhone 6. Ngoài ra cả iPhone 6s và iPhone 6s Plus đều hỗ trợ các kết nối LTE và Wifi với tố độ cao gấp đôi so với iPhone 6.
+Có quá nhiều tính năng mới mẻ, cần thiết và hỗ trợ tối đa tiện ích khi nói về iOS 9. Sở hữu một con chip A9 mạnh mẽ, Apple đã “thổi hồn” cho con chip này với một iOS 9 có khả năng xử lý đa nhiệm cực kỳ mượt mà. Tính năng tìm kiếm thông minh cũng như ứng dụng chuyên tâm về sức khỏe đã khiến hệ sinh thái iOS mới đáng giá hơn bao giờ hết. Chế độ tiết kiệm pin cũng là điểm đáng nói giúp bạn đọc làm chủ thời lượng sử dụng của mình một cách tối ưu.
+Sử dụng iPhone 6s bạn sẽ không phải phàn nàn về bất kỳ sự giật, lag nào khi thực hiện những tác vụ hoặc những game đòi hỏi cấu hình cao đến đâu đi chăng nữa trên AppStore 
+Camera cao cấp với nhiều tính năng hiện đại
+
+Camera iSign (camera chính) được nâng cấp lên 12MP có tốc độ lấy nét cực nhanh. Khả năng quay video 4K cao cấp cùng với đó là Camera trước 5MP với Retina Flash rất phù hợp để bạn ghi lại những khoảnh khắc đáng nhớ trong cuộc sống...
+Tính năng quay video 4K trên iPhone 6s thực sự đáng giá đem lại cho bạn những đoạn phim ngắn ấn tượng với hình ảnh sắc nét độ phân giải cao gấp 4 lần chuẩn Full-HD 1080P hiện nay. Thời lượng pin cũng là điểm đáng nói đến khi iPhone 6s sử dụng iOS 9 có thời lượng sử dụng pin tốt hơn rất nhiều, dùng hơn một ngày thoải mái (xem phim liên tục thì được khoảng 11 tiếng) và vẫn tốt hơn so với pin các máy smartphone cao cấp khác.
+Live Photo kết hợp Retina Flash tạo nên trải nghiệm thú vị về hình ảnh
+
+Camera trước của iPhone 6s lần đầu tiên tích hợp công nghệ Retina Flash khiến những bức ảnh selfie chụp trong điều kiện thiếu sáng trở nên đủ sáng và sắc nét hơn bao giờ hết. Độ phân giải 5Mp trên camera trước cũng là điểm nhấn đáng nói khi nói về tính năng selfie trên chiếc iPhone “nổi danh” này.
+Ngoài ra với tính năng Live Photos, chúng ta có thể dễ dàng ghi lại những khoảnh khắc vui nhộn, đáng nhớ trong cuộc sống, những chi tiết chỉ xảy ra trong vài giây ngắn ngủi khi sử dụng iPhone 6s. Hoặc sáng tạo hơn, chúng ta có thể tự tạo ra những bức ảnh động mang thương hiệu cá nhân để gán cho màn hình khóa, hoặc chia sẻ với bạn bè, người thân.
+','SP1_1.JPG','SP1_2.JPG','SP1_3.JPG','SP1_4.JPG','SP1_5.JPG','SP1_6.JPG','SP1_7.JPG','SP1_8.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8) VALUES(2,'SP2','Apple iPhone 6s: Tinh tế trong từng đường nét
+
+iPhone 6s là siêu phẩm của Apple được nâng cấp đặc biệt từ “người tiền nhiệm” iPhone 6 và lược bỏ toàn bộ những điểm yếu mà tất cả iPhone đời trước mắc phải. Không chỉ mạnh mẽ về cấu hình, đa dạng về màu sắc, iPhone 6s với công nghệ cảm ứng lực thông minh còn tạo nên một xu hướng tìm kiếm bùng nổ mạnh mẽ trên internet trong suốt thời gian qua.
+Thiết kế tinh tế với chất liệu nhôm siêu bền
+
+Về mặt thiết kế, iPhone 6s/6s Plus sử dụng lớp vỏ hợp kim nhôm 7000, chất liệu đang được sử dụng trong ngành công nghiệp hàng không vũ trụ, cho độ bền và cứng cáp hơn so với các đời iPhone trước. 
+Ngoài ra với sự đa dạng về màu sắc cũng chính là điểm nhấn tạo nên những thành công về thiết kế của iPhone 6s so với bất kỳ chiếc iPhone nào khác. Có lẽ Apple cũng không thể tin được rằng, iPhone 6s phiên bản vàng hồng lại “hot” và “hút” khách đến vậy...
+Tính năng 3D Touch tiện dụng hơn bao giờ hết
+
+Là chiếc điện thoại đầu tiên được trang bị màn hình cảm ứng 3D theo lực chạm (chạm mạnh hoặc chạm nhẹ) giúp bạn có những trải nghiệm khác biệt và làm được mọi thứ trên iPhone 6s. Ngoài ra, cảm biến vân tay thế hệ thứ 2 giúp iPhone 6s nhanh hơn, nhạy hơn so với thế hệ cũ, tốc độ xử lý dưới 0.5s.
+Với các ứng dụng có hỗ trợ công nghệ 3D Touch, thao tác nhấn mạnh cho phép chúng ta tùy chọn các lối tắt tính năng ngay từ màn hình chính, thay vì phải truy cập trực tiếp vào ứng dụng đó. Đơn cử như việc tạo ra một liên hệ mới, chúng ta chỉ cần nhấn mạnh ngón tay vào biểu tượng gọi điện để thực hiện thao tác này, thay vì nhấn thẳng vào ứng dụng gọi điện, chọn danh bạ và thêm liên hệ như thông thường.
+Thời điểm hiện tại, Apple đã cung cấp rất nhiều ứng dụng hỗ trợ công nghệ 3D Touch dành cho iPhone 6s giúp bạn khai thác và trải nghiệm “siêu phẩm 2015” một cách hoàn hảo.
+Cấu hình mạnh mẽ nâng cao trải nghiệm với iOS 9
+
+Đã trở thành bản sắc của Apple, “ông trùm quả táo” không chia sẻ quá nhiều về cấu hình cũng như dung lượng Ram, nhưng Apple cho biết trên iPhone 6s được trang bị Chip A9-64 bit. Bộ vi xử lý A9 mới với hiệu năng mạnh mẽ, nhanh hơn 70% và xử lý đồ hoạ tốt hơn 90% so với phiên bản iPhone 6. Ngoài ra cả iPhone 6s và iPhone 6s Plus đều hỗ trợ các kết nối LTE và Wifi với tố độ cao gấp đôi so với iPhone 6.
+Có quá nhiều tính năng mới mẻ, cần thiết và hỗ trợ tối đa tiện ích khi nói về iOS 9. Sở hữu một con chip A9 mạnh mẽ, Apple đã “thổi hồn” cho con chip này với một iOS 9 có khả năng xử lý đa nhiệm cực kỳ mượt mà. Tính năng tìm kiếm thông minh cũng như ứng dụng chuyên tâm về sức khỏe đã khiến hệ sinh thái iOS mới đáng giá hơn bao giờ hết. Chế độ tiết kiệm pin cũng là điểm đáng nói giúp bạn đọc làm chủ thời lượng sử dụng của mình một cách tối ưu.
+Sử dụng iPhone 6s bạn sẽ không phải phàn nàn về bất kỳ sự giật, lag nào khi thực hiện những tác vụ hoặc những game đòi hỏi cấu hình cao đến đâu đi chăng nữa trên AppStore 
+Camera cao cấp với nhiều tính năng hiện đại
+
+Camera iSign (camera chính) được nâng cấp lên 12MP có tốc độ lấy nét cực nhanh. Khả năng quay video 4K cao cấp cùng với đó là Camera trước 5MP với Retina Flash rất phù hợp để bạn ghi lại những khoảnh khắc đáng nhớ trong cuộc sống...
+Tính năng quay video 4K trên iPhone 6s thực sự đáng giá đem lại cho bạn những đoạn phim ngắn ấn tượng với hình ảnh sắc nét độ phân giải cao gấp 4 lần chuẩn Full-HD 1080P hiện nay. Thời lượng pin cũng là điểm đáng nói đến khi iPhone 6s sử dụng iOS 9 có thời lượng sử dụng pin tốt hơn rất nhiều, dùng hơn một ngày thoải mái (xem phim liên tục thì được khoảng 11 tiếng) và vẫn tốt hơn so với pin các máy smartphone cao cấp khác.
+Live Photo kết hợp Retina Flash tạo nên trải nghiệm thú vị về hình ảnh
+
+Camera trước của iPhone 6s lần đầu tiên tích hợp công nghệ Retina Flash khiến những bức ảnh selfie chụp trong điều kiện thiếu sáng trở nên đủ sáng và sắc nét hơn bao giờ hết. Độ phân giải 5Mp trên camera trước cũng là điểm nhấn đáng nói khi nói về tính năng selfie trên chiếc iPhone “nổi danh” này.
+Ngoài ra với tính năng Live Photos, chúng ta có thể dễ dàng ghi lại những khoảnh khắc vui nhộn, đáng nhớ trong cuộc sống, những chi tiết chỉ xảy ra trong vài giây ngắn ngủi khi sử dụng iPhone 6s. Hoặc sáng tạo hơn, chúng ta có thể tự tạo ra những bức ảnh động mang thương hiệu cá nhân để gán cho màn hình khóa, hoặc chia sẻ với bạn bè, người thân.
+','SP2_1.JPG','SP2_2.JPG','SP2_3.JPG','SP2_4.JPG','SP2_5.JPG','SP2_6.JPG','SP2_7.JPG','SP2_8.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8) VALUES(3,'SP3','iPhone 6s Plus - Nâng cao trải nghiệm với màn hình lớn 
+
+Ra mắt cùng lúc với iPhone 6s, iPhone 6s Plus được Apple ra mắt vào ngày 10/10 vừa qua là sự nâng cấp đặc biệt từ “người tiền nhiệm” iPhone 6 Plus và lược bỏ toàn bộ những điểm yếu mà tất cả iPhone đời trước mắc phải. Không chỉ là chiếc phablet mạnh mẽ về cấu hình, đa dạng về màu sắc, iPhone 6s Plus với công nghệ cảm ứng lực thông minh còn tạo nên một trải nghiệm mới mẻ trên chiếc smartphone màn hình lớn.
+Thiết kế tinh tế với chất liệu nhôm siêu bền
+
+Về mặt thiết kế, iPhone 6s/6s Plus sử dụng lớp vỏ hợp kim nhôm 7000, chất liệu đang được sử dụng trong ngành công nghiệp hàng không vũ trụ, cho độ bền và cứng cáp hơn so với các đời iPhone trước. 
+Ngoài ra với sự đa dạng về màu sắc cũng chính là điểm nhấn tạo nên những thành công về thiết kế của iPhone 6s Plus so với bất kỳ chiếc phablet nào khác. Có lẽ Apple cũng không thể tin được rằng, iPhone 6s và iPhone 6s Plus phiên bản vàng hồng lại “hot” và “hút” khách đến vậy...
+Trải nghiệm 3D Touch trên màn hình siêu rộng
+
+Là chiếc điện thoại đầu tiên được trang bị màn hình cảm ứng 3D theo lực chạm (chạm mạnh hoặc chạm nhẹ) giúp bạn có những trải nghiệm khác biệt và làm được mọi thứ trên iPhone 6s Plus. Ngoài ra, cảm biến vân tay thế hệ thứ 2 giúp iPhone 6s Plus nhanh hơn, nhạy hơn so với thế hệ cũ, tốc độ xử lý dưới 0.5s.
+Với các ứng dụng có hỗ trợ công nghệ 3D Touch, thao tác nhấn mạnh cho phép chúng ta tùy chọn các lối tắt tính năng ngay từ màn hình chính, thay vì phải truy cập trực tiếp vào ứng dụng đó. Đơn cử như việc tạo ra một liên hệ mới, chúng ta chỉ cần nhấn mạnh ngón tay vào biểu tượng gọi điện để thực hiện thao tác này, thay vì nhấn thẳng vào ứng dụng gọi điện, chọn danh bạ và thêm liên hệ như thông thường. 
+Thời điểm hiện tại, Apple đã cung cấp rất nhiều ứng dụng hỗ trợ công nghệ 3D Touch dành cho iPhone 6s Plus giúp bạn khai thác và trải nghiệm “siêu phẩm 2015” một cách hoàn hảo.
+
+
+Cấu hình mạnh mẽ nâng cao trải nghiệm với iOS 9
+
+Đã trở thành bản sắc của Apple, “ông trùm quả táo” không chia sẻ quá nhiều về cấu hình cũng như dung lượng Ram, nhưng Apple cho biết trên iPhone 6s Plus được trang bị Chip A9-64 bit. Bộ vi xử lý A9 mới với hiệu năng mạnh mẽ, nhanh hơn 70% và xử lý đồ hoạ tốt hơn 90% so với phiên bản iPhone 6/iPhone 6 Plus. Ngoài ra cả iPhone 6s và iPhone 6s Plus đều hỗ trợ các kết nối LTE và Wifi với tố độ cao gấp đôi so với iPhone 6/iPhone 6 Plus.
+Có quá nhiều tính năng mới mẻ, cần thiết và hỗ trợ tối đa tiện ích khi nói về iOS 9. Sở hữu một con chip A9 mạnh mẽ, Apple đã “thổi hồn” cho con chip này với một iOS 9 có khả năng xử lý đa nhiệm cực kỳ mượt mà. Tính năng tìm kiếm thông minh cũng như ứng dụng chuyên tâm về sức khỏe đã khiến hệ sinh thái iOS mới đáng giá hơn bao giờ hết. Chế độ tiết kiệm pin cũng là điểm đáng nói giúp bạn đọc làm chủ thời lượng sử dụng của mình một cách tối ưu.
+
+Sử dụng iPhone 6s Plus, bạn sẽ không phải phàn nàn về bất kỳ sự giật, lag nào khi thực hiện những tác vụ hoặc những game đòi hỏi cấu hình cao đến đâu đi chăng nữa trên AppStore.
+
+
+Camera cao cấp với chế độ chống rung quang học OIS hiện đại
+
+Camera iSign (camera chính) được nâng cấp lên 12MP có tốc độ lấy nét cực nhanh. Khả năng quay video 4K cao cấp cùng với đó là Camera trước 5MP với Retina Flash rất phù hợp để bạn ghi lại những khoảnh khắc đáng nhớ trong cuộc sống.
+
+Sự nâng cấp đáng kể về độ phân giải camera trên iPhone 6s Plus có thể coi là một bước nhảy vượt bậc sau sự trung thành về cảm biến 8Mp suốt 4 đời iPhone trước đó, công nghệ mới được tích hợp vào cảm biến iSight của hãng giúp iPhone 6s Plus cho ra những hình ảnh sắc nét và trung thực đến kinh ngạc.
+Tính năng quay video 4K trên iPhone 6s Plus thực sự đáng giá đem lại cho bạn những đoạn phim ngắn ấn tượng với hình ảnh sắc nét độ phân giải cao gấp 4 lần chuẩn Full-HD 1080P hiện nay. Thời lượng pin cũng là điểm đáng nói đến khi iPhone 6s Plus sử dụng iOS 9 có thời lượng sử dụng pin tốt hơn rất nhiều.
+
+
+Live Photo kết hợp Retina Flash tạo nên trải nghiệm thú vị về hình ảnh
+
+Camera trước của iPhone 6s Plus lần đầu tiên tích hợp công nghệ Retina Flash khiến những bức ảnh selfie chụp trong điều kiện thiếu sáng trở nên đủ sáng và sắc nét hơn bao giờ hết. Độ phân giải 5Mp trên camera trước cũng là điểm nhấn đáng nói khi nói về tính năng selfie trên chiếc iPhone “nổi danh” này.
+Ngoài ra với tính năng Live Photos, chúng ta có thể dễ dàng ghi lại những khoảnh khắc vui nhộn, đáng nhớ trong cuộc sống, những chi tiết chỉ xảy ra trong vài giây ngắn ngủi khi sử dụng iPhone 6s Plus. Hoặc sáng tạo hơn, chúng ta có thể tự tạo ra những bức ảnh động mang thương hiệu cá nhân để gán cho màn hình khóa, hoặc chia sẻ với bạn bè, người thân.
+','SP3_1.JPG','SP3_2.JPG','SP3_3.JPG','SP3_4.JPG','SP3_5.JPG','SP3_6.JPG','SP3_7.JPG','SP3_8.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7) VALUES(4,'SP4','Samsung Galaxy A5 2016: Mạnh mẽ và đầy cá tính
+
+Samsung Galaxy A5 2016 là phiên bản nâng cấp của chiếc Galaxy A5 thành công trước đó. Tuy nhiên, với thiếu kế “thức thời”, thanh mảnh và mạnh mẽ trong từng đường nét, smartphone Samsung Galaxy A5 2016 với bộ khung kim loại nguyên khối tuyệt là một sự lựa chọn cực kỳ đáng giá ở phân khúc tầm trung. 
+Thiết kế tinh tế trên từng đường nét
+
+Năm nay thiết kế dòng A đã lột xác hoàn toàn so với năm ngoái. Thay đổi này chính là chất liệu khung kim loại kết hợp 2 mặt kính cường lực thời trang giống với các flagship đầu bảng của Samsung.
+Theo đó, A5 như là một phiên bản S6 giá rẻ với ngoại hình khá giống nhau. S6 bo cong nhiều trong khi A5 thì có phần vuông vức hơn một chút còn lại các góc cạnh và hai mặt trước, sau đều na ná nhau và có sức lôi cuốn mạnh mẽ.
+
+
+Công nghệ màn hình đỉnh cao
+
+Nếu năm ngoái Galaxy A5 chỉ được trang bị một màn hình 5 inch HD 720p thì năm nay 5.2 inch và độ phân giải Full HD 1080p là hai thông số trên màn hình của phiên bản 2016. Ngoài ra, với khả năng hiển thị sống động của màn hình Super Amoled và Tối ưu hiển thị (Adapt Display) mang lại màu sắc chân thật trên Samsung Galaxy A5. 
+Công nghệ màn hình Full-HD cũng giúp Galaxy A5 2016 đem lại mật độ điểm ảnh hiển thị cao, hiển thị tốt trong nhiều môi trường ánh sáng phức tạp. 
+Ngoài ra, nếu so sánh với “người khổng lồ” Galaxy S6 là màn hình phía trước làm cong dạng 2.5D cho khả năng vuốt chạm tốt hơn một chút mặc dù bộ đôi này đều dùng kính cường lực Gorilla Glass 4. Màn hình 2.5D là đặc điểm phổ biến thường thấy trên smartphone trong nửa cuối 2015, trong khi S6 ra mắt vào tháng 3 nên không theo xu hướng này. 
+
+ 
+
+Cấu hình mạnh mẽ sử dụng chip Exynos
+
+Galaxy A5 được trang bị bộ cấu hình cao với bộ vi xử lý 8 nhân Exynos xung nhịp 1.6 GHz thiết kế trên nền 64 bit cùng với dung lượng RAM 2 GB cho máy hiệu suất cao, giúp bạn mở hay cài đặt nhiều ứng dụng cùng lúc mà máy vẫn luôn mượt mà trong từng thao tác. Bên cạnh đó, Galaxy A5 cung cấp bộ nhớ trong 16 GB để cài đặt ứng dụng cũng như lưu trữ dữ liệu, ngoài ra chiếc điện thoại cũng hỗ trợ cho bạn thẻ nhớ ngoài 128 GB để bạn lưu trữ những dữ liệu lớn.
+Camera cao cấp tích hợp nhiều tính năng hiện đại
+
+Cặp đôi camera trước/sau của Galaxy A5 đã được cải tiến về tốc độ chụp hình cũng như công nghệ được trang bị trên nó như khả năng chụp trong điều kiện người sử dụng phải di chuyển liên tục. Cụ thể, về camera, A5 tuy giữ nguyên độ phân giải 13MP so với thế hệ cũ nhưng được trang bị thêm khả năng chống rung OIS bên cạnh khẩu độ F/1.9 tương đương với S6. Máy vẫn có thể kích hoạt nhanh máy ảnh khi nhấn 2 lần vào phím home khá tiện lợi.. 
+Độ phân giải cao 5MP của camera trước giúp cho Samsung Galaxy A5 có thể mang đến những bức hình chụp “tự sướng” tuyệt đẹp cho bạn. Với Galaxy A5, bạn không cần nhấn nút chụp mà vẫn có thể Selfie một cách như ý. Chế độ chụp selfie thông minh bằng tay cùng khả năng chỉnh sửa ảnh độc đáo sẽ đưa trải nghiệm Selfie của bạn lên một tầm cao mới.
+
+
+Chế độ tiết kiệm pin thông minh
+
+Với chế độ Siêu tiết kiệm Pin (Ultra Power Saving) làm giảm đáng kể mức độ tiêu thụ pin bằng cách tắt các chức năng không cần thiết, đảm bảo điện thoại của bạn luôn sẵn sàng khi bạn thực sự cần đến. Pin thông minh hơn cho chiếc điện thoại thông minh hơn.
+Ngoài ra, với dung lượng pin Galaxy A5 2016 lên tới 2,900mAh, người dùng sẽ được trải nghiệm chiếc smartphone này với hơn 1 ngày sử dụng thoải mái.
+','SP4_1.JPG','SP4_2.JPG','SP4_3.JPG','SP4_4.JPG','SP4_5.JPG','SP4_6.JPG','SP4_7.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8) VALUES(5,'SP5','Samsung Galaxy J2 - điện thoại hỗ trợ 4G giá tốt cấu hình ổn
+
+Samsung Galaxy J2 – sản phẩm tiếp bước Galaxy J1 với đầy đủ các chức năng cơ bản đặc biệt được bổ sung thêm tính năng 4G để lướt web nhanh hơn. Thiết bị phù hợp với người có thu nhập trung bình hoặc các bạn học sinh, sinh viên.
+Về thiết kế
+
+Với vẻ ngoài không nhiều thay đổi so với Galaxy J1 nhưng khi cầm trên tay cảm giác sẻ chắc chắn hơn và các cạnh uốn cong trông mềm mại hơn giống các anh em trong gia đình Galaxy J như J5,J7.
+Màn hình đẹp
+
+Galaxy J2 được trang bị màn hình 4.7 inch công nghệ Super AMOLED độ phân giải 540 x 960 pixels. Màn hình không quá lớn cho cảm giác vừa tay khi sử dụng.
+
+Với độ phân giải này, máy cho khả năng hiển thị tốt hơn, nét cũng rõ hơn so với đàn anh đi trước của mình.
+Camera tốt
+
+Máy được tích hợp đầy đủ chức năng camera với camera sau có độ phân giải 5.0 MP kèm với đèn flash để chụp đêm tốt hơn, camra trước 2.0 không quá lớn nhưng cũng không quá tệ để đáp ứng nhu cầu lưu lại những khoảnh khắc trong cuộc sống.
+Cấu hình ổn định
+
+Sản phẩm thuộc phân khúc tầm trung vì thế cấu hình máy chỉ ở mức tương đối nhưng vẩn rất tốt trong quá trình sử dụng cũng như các nhu cầu giải trí cơ bản như lên mạng, xem phim, chơi các game nhẹ... Máy có CPU 4 nhân tốc độ 1.3 GHz và RAM chỉ 1GB.
+Đặc biệt máy được trang bị công nghệ 4G LTE để trải nghiệm dịch vụ internet một cách nhanh nhất mà một số nhà mạng đang triển khai ở Việt Nam.
+
+
+Pin dung lượng 2000 mAh 
+
+Mang trong mình thỏi pin dung lượng 2000 mAh Samsung Galaxy J2 vẩn đảm ứng các nhu cầu cơ bản như nghe gọi trong một ngày và sử dụng liên tục như: chơi game, xem phim, nghe nhạc, lên mạng... 3 giờ đến 4 giờ.
+','SP5_1.JPG','SP5_2.JPG','SP5_3.JPG','SP5_4.JPG','SP5_5.JPG','SP5_6.JPG','SP5_7.JPG','SP5_8.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5) VALUES(6,'SP6','Samsung Galaxy J7 2016 - Thỏa sức trải nghiệm với phablet viền kim loại giá rẻ
+
+Samsung Galaxy J7 2016 ra mắt cùng với Galaxy J5 2016 nhưng Galaxy J7 được ưu ái hơn khi được tích hợp một số tính năng đáng giá và sở hữu cấu hình ở mức khá cao. Lần này, Samsung đã thổi hồn cho Galaxy J7 2016 với bộ viền kim loại tinh tế. Đây thực sự là một lựa chọn cực kỳ đáng giá ở phân khúc tầm trung cận cao cấp trên thị trường hiện nay.
+Thiết kế sang trọng - tinh tế
+
+Galaxy J7 2016 sử dụng chất liệu viền kim loại giống với những flagship đầu bảng của Samsung. Ra mắt lần này, Samsung đã quan tâm hơn tới phân khúc khách hàng tầm trung trên thị trường khi trang bị những thông số không hề khiêm tốn.
+Công nghệ màn hình đỉnh cao
+
+Galaxy J7 2016 có khả năng hiển thị sống động với độ phân giải 1280 x 720 pixels và công nghệ màn hình Super AMOLED đem lại mật độ điểm ảnh hiển thị cao, hiển thị tốt trong nhiều môi trường ánh sáng phức.
+Cặp đôi camera với nâng cấp đáng kể về thông số
+
+Cặp đôi camera trước/sau của Galaxy J7 đã được cải tiến về tốc độ chụp hình cũng như công nghệ được trang bị trên nó như khả năng nhận diện khuôn mặt, chạm lấy nét. Cho phép bạn chọn lựa vị trí chụp sắc nét nhất có thể.. Cụ thể, về camera, J7 đã được nâng cấp lên độ phân giải 13MP giúp bạn thỏa sức sáng tạo bằng hình ảnh một cách chân thực nhất.
+Độ phân giải cao 5MP của camera trước giúp cho Samsung Galaxy J7 2016 có thể mang đến những bức hình ở chất lượng khá cao và tuyệt đẹp dành cho bạn. Với Galaxy J7, bạn sẽ được chụp ảnh selfie với một số chế độ thông minh ,độc đáo sẽ đưa trải nghiệm tối đa sức mạnh của máy. Bạn cũng có thể dễ dàng nhận thấy chiếc Samsung Galaxy J7 2016 cũng trang bị đèn flash LED trợ sáng cho camera selfie.
+
+​
+
+Cấu hình mạnh mẽ so với tầm giá
+
+Galaxy J7 2016 sở hữu cấu hình bên trong là vi xử lý 8 nhân tốc độ 1.6 GHz, bộ nhớ RAM 2 GB, bộ nhớ trong 16 GB, camera 5/13 MP và thỏi pin dung lượng 3.300 mAh. Thiết bị có kích thước 151.7 x 76 x 7.8 mm và nặng 170 gram. Ngoài ra chiếc điện thoại cũng hỗ trợ cho bạn thẻ nhớ ngoài 128 GB để bạn lưu trữ những dữ liệu lớn.
+Tính năng S-Bike an toàn kết hợp với chế độ tiết kiệm pin thông minh
+
+Mức pin của J7 2016 được nâng lên 3300 mAh giúp bạn kéo dài hơn thời gian sử dụng máy. Tính năng siêu tiết kiệm pin cũng được tích hợp khi dung lượng máy của bạn chỉ còn dưới 30%. Galaxy J7 2016 được bổ sung thêm kết nối 4G cat 4 cho tốc độ truy cập nhanh hơn. Đặc biệt chế độ S-Bike cực kì hữu ích cho bạn khi đang lái xe.
+','SP6_1.JPG','SP6_2.JPG','SP6_3.JPG','SP6_4.JPG','SP6_5.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5) VALUES(7,'SP7','Samsung Galaxy J5 – Smartphone giá rẻ dành cho người dùng mê “selfie”
+
+Samsung Galaxy J5 cùng Galaxy J7 được Samsung thị trường phân khúc giá tầm trung. Ngoài cấu hình ổn cùng giá bán hợp lý, điểm nổi bật nhất trên Galaxy J5 là camera trước 5MP cùng một đèn flash LED trợ sáng.
+
+Thiết kế hiện đại, tinh tế
+
+Samsung Galaxy J5 vẫn mang ngôn ngữ thiết kế hiện đại của dòng J với viền nhựa bo tròn, mang lại cảm giác thoải mái khi sử dụng, kèm theo là viền giả kim loại tăng thêm sự sang trọng cho sản phẩm.
+Máy dày 8.5 mm, nặng 149 gam, không phải kích thước siêu mỏng, siêu nhẹ nhưng vẫn rất vừa vặn để bạn cầm nắm, thao tác. Các góc cạnh máy đều bo tròn nhẹ nhàng giúp máy không cấn tay, dễ thao tác và sử dụng.
+
+Màn hình 5 inch sắc nét
+Tương tự như các sản phẩm khác của Samsung, Galaxy J5 cũng được sử dụng tấm nền SuperAMOLED, độ phân giải HD và kích thước 5inches cho khả năng hiển thị màu sắc sâu, hình ảnh sắc nét và rực rỡ.
+Cảm ứng khá nhạy giúp bạn thao tác dễ dàng, chính xác trên màn hình rộng. Nhờ vậy, người dùng có thể đọc báo, chơi game, xem phim thoải mái, tận dụng được tối đa độ rực rỡ, sắc nét của màn hình chất lượng cao.
+
+Camera chính 13MP với đèn flash LED trợ sáng 
+Samsung Galaxy J5 có camera chính 13MP với đèn flash LED trợ sáng cùng nhiều chế độ chụp ảnh quen thuộc được hãng cài đặt sẵn. Tuy nhiên, mọi sự chú ý có lẽ là dành cho camera trước của máy. Camera này có độ phân giải 5MP và đây cũng là thiết bị đầu tiên của Samsung được trang bị đèn flash trợ sáng cho camera trước.
+
+Cấu hình lõi tứ
+
+Máy trang bị cấu hình khá mạnh mẽ với chip lõi tứ, tốc độ 1.2 GHz RAM 1.5 GB cùng bộ nhớ trong 8 GB.
+
+Khuyết điểm của máy là chỉ trang bị thanh RAM 1.5 GB, khiến máy có tốc độ xử lý hạn chế hơn. Khi mở quá nhiều ứng dụng hay làm việc lâu, máy sẽ có độ trễ khi khởi chạy các ứng dụng. Đồng thời, việc chuyển đổi giữa các ứng dụng, chơi game nặng cũng không thực sự mượt mà.
+Tuy nhiên, cấu hình này vẫn khá lý tưởng so với những thiết bị di động phổ thông, đáp ứng mọi nhu cầu, làm việc và giải trí của người dùng. Bộ nhớ cũng có thể mở rộn ra với thẻ nhớ 64 GB.
+
+Sử dụng pin công nghệ Ultra Saving kéo dài thời gian sử dụng
+Máy trang bị pin Li-ion 2.6000 mAh, không quá ấn tượng trong các dòng smartphone Android hiện nay. Tuy nhiên, điều đặc biệt của J5 chính là công nghệ Ultra Saving giúp máy có kéo dài thời sử dụng pin, để người dùng yên tâm sử dụng máy cả ngày, đi công tác, di chuyển nhiều vẫn không lo hết pin.
+
+Chế độ tiết kiệm pin này của Samsung giúp kéo dài thời gian sử dụng của máy, trong trường hợp máy sắp hết pin. Nhờ vậy, những liên lạc, kết nối của bạn không bị gián đoạn.
+
+Samsung Galaxy J5 hiện đang có mặt tại các hệ thống siêu thị của Viettel Store trên toàn quốc, bạn có thể đến siêu thị gần nhất để mua sản phẩm hoặc có thể gọi điện đến tổng đài 1800 8123 để được chúng tôi tư vấn và mua online sản phẩm này (miễn phí cước gọi).
+
+Xem thêm các tin bài liên quan:
+
+Samsung Galaxy Note 5 rò rỉ ảnh chi tiết
+
+Galaxy J5 và Galaxy J7 bất người được Samsung giới thiệu
+
+Cùng “tự sướng” với 2 model mới Galaxy J5 và Galaxy J7 của Samsung
+','SP7_1.JPG','SP7_2.JPG','SP7_3.JPG','SP7_4.JPG','SP7_5.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7) VALUES(8,'SP8','Samsung Galaxy J7 – Cấu hình mạnh, màn hình lớn, tính năng nổi bật
+
+Samsung Galaxy J7 cùng Galaxy J5 là bộ đôi smartphone giá tầm trung vừa được Samsung cho ra mắt. Sản phẩm này sở hữu cấu hình mạnh mẽ, màn hình lớn ấn tượng cùng hàng loạt tính năng, trong đó ấn tượng nhất là khả năng chụp ảnh selfie ấn tượng.
+Thiết kế đẹp, thời trang
+Samsung Galaxy J7 có thiết kế đơn giản và rất quen thuộc của một thiết bị mang thương hiệu Samsung. Bộ vỏ nhựa với các cạnh và các góc được bo cong tạo cảm giác ôm tay khi cầm. Đây cũng là chi tiết thiết kế hợp cho một chiếc smartphone có màn hình lên đến 5.5 inch. Bên cạnh đó thì Samsung Galaxy J7 cũng mỏng hơn người anh em khi chỉ có độ dày 7.9mm so với 8.5mm của Galaxy J5.
+
+
+Màn hình HD
+Samsung Galaxy J7 là dòng sản phẩm có kích thước lớn nhất trong số các thiết bị ra mắt đợt này của Samsung. Do có kích thước lớn nên Galaxy J7 cũng được trang bị màn hình hiển thị lớn lên tới 5.5 inch bằng với kích thước của chiếc LG G3 tới từ ông chủ Hàn Quốc LG. Tuy vậy độ phân giải HD (720 x 1280 pixels), cho hiển thị tốt, hình ảnh đẹp nhưng không quá sắc nét.
+
+
+Camera trước có góc chụp rộng, kèm đèn Flash
+
+Camera trước của Samsung Galaxy J7 có độ phân giải cao 5MP đi kèm đèn Flash LED, hỗ trợ chụp ảnh tốt, cho chất lượng ảnh chụp đẹp, hình ảnh nét, mịn, màu sắc chi tiết, hỗ trợ hàng loạt tính năng chụp ảnh như chụp panorama, chụp làm đẹp da, chụp trước lấy nét sau, tốc độ lấy nét nhanh cùng nhiều tính năng thú vị khác. Tính năng chụp thiếu sáng cũng ấn tượng không kém, góc chụp rộng và hơn thế nữa chiếc camera này cũng hỗ trợ đàm thoại video tốt.
+Trong khi đó, chiếc camera chính phía sau có độ phân giải cũng rất ấn tượng lên tới 13MP. Chiếc camera này cũng được tích hợp kèm đèn Flash LED giúp nâng cao chất lượng ảnh chụp trong điều kiện thiếu sáng.
+Cho chất lượng ảnh chụp đẹp với mọi điều kiện sáng. Ngoài ra, chiếc camera này còn hỗ trợ quay video với độ phân giải Full HD, chât lượng video thu được tốt, khả năng lọc âm ấn tượng. Bên cạnh đó, chiếc camera này cũng hỗ trợ hàng loạt tính năng chụp ảnh như chụp ảnh gif, chụp ảnh HDR...
+
+
+Hiệu năng cao, pin cho thời lượng sử dụng tốt
+Samsung Galaxy J7 được trang bị chip xử lý Exynos 7580, 8 nhân đi cùng RAM 1.5 GB mạnh mẽ giúp máy xử lý mượt mà hầu hết các ứng dụng từ thông thường đến các ứng dụng nặng, đồng thời cũng xử lý đa nhiệm tốt. Bộ nhớ trong của máy 16 GB với khoảng 13 GB khả dụng và hỗ trợ thẻ nhớ ngoài tối đa 64 GB cũng đáp ứng nhu cầu lưu trữ của bạn.
+
+Máy chạy trên hệ điều hành Android 5.1 Lollipop với giao diện được tối ưu hóa giúp dễ sử dụng hơn. Ngoài ra, kho ứng dụng Google Play với hàng triệu ứng dụng miễn phí và trả phí cũng giúp bạn làm việc và giải trí thuận tiện hơn.
+Viên pin có dung lượng 3000 mAh cho thời gian sử dụng ấn tượng. Trong điều kiện sử dụng bình thường ít online 3G máy có thể kéo dài hơn 2 ngày còn nếu bạn sử dụng liên tục với nhiều chương trình như chơi game, xem youtube, lướt web thì máy có thể trụ được gần 8 tiếng.
+
+Samsung Galaxy J7 hiện đang có mặt tại các hệ thống siêu thị của Viettel Store trên toàn quốc, bạn có thể đến siêu thị gần nhất để mua sản phẩm hoặc có thể gọi điện đến tổng đài 1800 8123 để được chúng tôi tư vấn và mua online sản phẩm này (miễn phí cước gọi).
+
+Xem thêm các tin bài liên quan:
+
+Galaxy J5 và Galaxy J7 bất người được Samsung giới thiệu
+
+Những điều cần biết về chiếc điện thoại Samsung Galaxy J7
+
+Cùng “tự sướng” với 2 model mới Galaxy J5 và Galaxy J7 của Samsung
+','SP8_1.JPG','SP8_2.JPG','SP8_3.JPG','SP8_4.JPG','SP8_5.JPG','SP8_6.JPG','SP8_7.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8) VALUES(9,'SP9','Trên tay “kẻ hủy diệt” phân khúc tầm trung Galaxy J7 Prime sắp ra mắt tại Việt Nam 
+
+Theo những thông tin rò rỉ từ trước đây, Galaxy J7 Prime được đánh giá là “kẻ hủy diệt” phân khúc tầm trung với cảm biến vân tay kết hợp trên thiết kế kim loại nguyên khối, camera khủng “bá chủ” selfie phân khúc 6,5 triệu.
+Năm 2016, dòng Galaxy J tiếp tục ra mắt những dòng sản phẩm mới, đáng chú ý nhất chính là Galaxy J7 Prime. Hiện tại, sản phẩm này đã có mặt tại thị trường Việt Nam nhưng đây chỉ là bản sample và sẽ sớm được bán ra trong thời gian tới.
+
+Về cấu hình, Samsung Galaxy J7 Prime 2016 được trang bị vi xử lý 8 nhân 1.6GHZ, RAM 3GB, bộ nhớ trong 32GB, hỗ trợ thẻ nhớ mở rộng cùng viên pin lên tới 3.300 mAh. Khác với thị trường Ấn Độ, J7 2016 tại Việt Nam sở hữu bộ đôi camera 13MP và 8 MP cùng với khẩu độ F/1.9 hứa hẹn đem lại chất lượng ảnh tốt. Giá bán dự kiến của Galaxy J7 Prime 2016 tại Việt Nam là dưới 6,5 triệu đồng. Dưới đây là những hình ảnh thực tế về mẫu smartphone này.
+','SP9_1.JPG','SP9_2.JPG','SP99_3.JPG','SP9_4.JPG','SP9_5.JPG','SP9_6.JPG','SP9_7.JPG','SP9_8.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8) VALUES(10,'SP10','Samsung Galaxy Note 5 – Đỉnh cao phong cách
+
+Sản phẩm thế hệ mới nhất của dòng Galaxy Note được ra mắt đã tiếp thêm độ nóng cho thị trường smartphone vốn đang rất nóng bỏng. Galaxy Note 5 đã tạo ra một cú hích không hề nhỏ, khi gây được ấn tượng tốt với người dùng bởi cấu hình,tính năng mạnh mẽ cùng thiết kế mới vô cùng hoàn hảo.
+Ngày 13/8 vừa qua Galaxy 5 đã chính thức được Samsung trình làng, được đánh giá là sản phẩm cao cấp nhất của Samsung tính tới thời điểm hiện tại, Galaxy Note đã đem đến cho người dùng những ấn tượng vô cùng tốt khiến giới công nghệ cũng phải thốt lên những từ “lộng lẫy nhất”, “mạnh mẽ nhất”, “tinh tế nhất”, để dành cho Samsung Galaxy Note 5.
+Galaxy Note 4 với độ dày 8,5 mm đã lui vào dĩ vãng khi Galaxy Note 5 chỉ có độ dày 7,6 mm, không chỉ có thế sản phẩm này còn sở hữu màn hình 5,7 inch cùng với thiết kế tinh tế với mặt lưng kính được uốn cong hai bên tích hợp thêm công nghệ màn hình siêu mỏng đã tạo lên tiếng vang ngay từ khi sản phẩm được ra mắt.
+
+
+Công nghệ màn hình đỉnh cao
+Cùng kích thước màn hình 5,7 inch với Note 4, nhưng bề ngang của Galaxy Note 5 lại gọn hơn 2 mm nhờ thiết kế đường viền bao quanh siêu mỏng chỉ 2.4mm. 
+
+Model tới từ Samsung là smartphone sở hữu tỷ lệ hiển thị của màn hình thuộc hàng tốt nhất trên thị trường hiện nay, khi phần hiển thị của màn hình chiếm tới hơn 76% diện tích mặt trước. Khi xem phim hay ngắm nhìn các bức ảnh, người dùng sẽ tập trung hoàn toàn vào màn hình siêu nét của Note 5 vì viền màn hình hai bên gần như được loại bỏ.
+
+
+Sử dụng S Pen thế hệ mới
+Galaxy Note 5 được trang bị trên mình S Pen thế hệ mới với những tính năng vô cùng tiện ích, với S Pen này thì bạn có thể dễ dàng ghi chú trên thiết bị ngay cả khi màn hình đang ở chế độ khóa, ngoài ra với tính năng chụp cuộn bạn có thể chụp toàn bộ một trang web. Những tính năng của S Pen thế hệ mới của Galaxy không chỉ dừng lại ở đó, đầu bút thiết bị này còn được nâng cấp làm cho việc viết, vẽ và ghi chú trở lên dễ dàng và chỉ ấn nhẹ là có thể lấy thiết bị này ra.
+
+
+Cấu hình mạnh mẽ nhất
+Với cấu hình sở hữu RAM LPDDR4  4 GB,Samsung Galaxy Note 5 là sản phẩm đầu tiên của Samsung sở hữu RAM khủng này.Ngoài RAM khủng Galaxy Note 5 còn được trang bị chipset 8 nhân Exynos 64-bit thế hệ mới, Galaxy Note 5 còn sở hữu hiệu năng sử dụng cao nhất hiện nay, kết quả này được Antutu Benchmark đưa ra.
+
+
+Camera cao cấp tích hợp nhiều tính năng hiện đại
+
+Camera của sản phẩm sở hữu độ phân giải Ultra HD 4K siêu khủng, với camera này việc ảnh của bạn sẽ tương đương với ảnh được chụp bởi máy ảnh không còn là điều khó khăn, khi độ phân giải camera chính lên tới 16 MP, cùng với  ống kính có khẩu độ lớn F/1.9 và công nghệ chống rung quang học OIS.
+Bạn sẽ thấy vô cùng thích thú vì giờ đây tính năng Live Broadcast đã xuất hiện trên sản phẩm Galaxy thế hệ mới này, đây cũng là sản phẩm đầu tiên của Samsung sở hữu tính năng thú vị này.
+
+
+Sạc không dây tốc độ cao
+Ngoài dung lượng pin lớn với 3000 mAh cùng hiệu năng sử dụng cao, sản phẩm còn sở hữu khả năng sạc pin tuyệt vời khi dùng cả cáp và bộ sạc không dây mang đến cho máy tốc độ sạc cao. Khi kết hợp cả cáp lẫn bộ sạc không day sản phẩm chỉ mất có 90 phut để pin ở trạng thái tốt nhất, với sạc không dây bạn cũng chỉ mất 120 phút  sạc  đầy hoàn toàn.
+','SP10_1.JPG','SP10_2.JPG','SP10_3.JPG','SP10_4.JPG','SP10_5.JPG','SP10_6.JPG','SP10_7.JPG','SP10_8.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5) VALUES(11,'SP11','Asus F555LF-XX166D: Trải nghiệm hình ảnh tuyệt vời với cạc đồ họa 2GB
+
+Laptop Asus F555LF-XX166D có thiết kế tinh tế, màn hình lớn và cấu hình cực ổn sẽ trở thành công cụ hữu ích giúp bạn xử lý công việc hàng ngày, vừa đáp ứng nhu cầu giải trí sau những giờ làm việc đầy căng thẳng và mệt mỏi. Đây được cho là chiếc laptop tập trung vào phân khúc học sinh – sinh viên và dân văn phòng với thiết kế mỏng, bền đẹp, chắc chắn cùng cấu hình và hiệu năng ổn định.
+
+ 
+
+Thiết kế hiện đại, thời trang
+
+Asus F555LF-XX166D hướng đến những người thường xuyên phải di chuyển và làm việc với máy tính như nhân viên văn phòng hay học sinh, sinh viên nên tính di động và độ bền là những yếu tố được chú trọng nhất trong thiết kế. Các khớp nối vững chắc cùng lớp vỏ nhựa đầy cứng cáp đã tạo cho máy một vẻ đẹp mạnh mẽ và bền bỉ. 
+Asus F555LF-XX166D mang đến cho bạn mọi tính năng điện toán thiết yếu trên một máy tính xách tay với lớp vỏ chống trơn trượt và thiết kế sang trọng, tinh tế. Sản phẩm có thể đáp ứng mọi nhu cầu, khiến đây là một lựa chọn lý tưởng cho nhu cầu của bạn.
+
+ 
+
+Màn hình 15,6 inch nâng cao trải nghiệm hình ảnh
+
+Cấu hình mạnh mẽ sử dụng chip Intel Core i5
+
+Asus F555LF-XX166D có thể xử lý nhanh chóng và mượt mà mọi tác vụ cơ bản của bạn mà không hề tiêu tốn nhiều điện năng. Thiết bị tận dụng lợi thế của bộ vi xử lý Intel Core i5-5200U tốc độ 2.20GHz, RAM 4GB và ổ cứng có dung lượng lên đến 500GB, phục vụ nhu cầu lưu giữ thông tin, hình ảnh, dữ liệu quan trọng của người dùng.
+Cạc đồ họa rời lên tới 2GB
+Ngoài ra, tuy là chiếc laptop có cấu hình tầm trung nhưng Asus F555LF-XX166D vẫn đảm bảo điều kiện hoàn hảo để bạn thoải mái xem các bộ phim Full HD hay các game 3D... nhờ được trang bị card đồ họa rời NVIDIA GeForce 2GB, giúp bạn xử lý các tác vụ liên quan đến đồ họa, đồng thời, hỗ trợ quá trình xem phim, chơi các game đồ họa phức tạp.
+
+ 
+
+Hỗ trợ kết nối đa dạng
+Cũng như các sản phẩm laptop khác, máy tính xách tay Asus F555LF-XX166D được trang bị đầy đủ các chuẩn USB cao cấp hiện nay và HDMI. Ngoài ra, máy còn được tích hợp đầu DVD cho khả năng ghi và đọc, để bạn dễ chia sẻ hay cất giữ dữ liệu thông qua đĩa DVD cực kỳ thuận tiện.
+','SP11_1.JPG','SP11_2.JPG','SP11_3.JPG','SP11_4.JPG','SP11_5.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4) VALUES(12,'SP12','Dell 5448 - RJNPG1: Chiếc laptop tối ưu trong từng tiêu chí
+
+
+Dell 5448 - RJNPG1 mang đến những hiệu suất vượt trội với màn hình sắc nét cũng như các tính năng mạnh mẽ và đột phá. Với bộ vi xử lý Core i5 đời mới, chiếc laptop này hội tụ các yếu tố cũng như các tính năng giúp cho quá trình làm việc cũng như giải trí được thoải mái hơn.   
+
+
+Cấu hình vượt trội với vi xử lý Core i5
+
+Dell 5448 - RJNPG1 trang bị bộ vi xử lý Intel Core i5 thế hệ Broadwell và RAM 4GB giúp máy chạy mượt mà hơn. Ổ cứng 500GB cho bạn không gian khá lớn để chứa dữ liệu. Card đồ họa rời AMD Radeon R7 M265, 2 GB có thể chơi tốt các tựa game 3D phổ biến hiện nay, hỗ trợ bạn rất tốt khi bạn phải thường xuyên làm việc với các ứng dụng liên quan đến hình ảnh sắc nét, độ phân giải cao.
+Với cấu hình này, máy có thể chạy mượt mà các tác vụ cơ bản như lướt web, soạn thảo văn bản, nghe nhạc hay xem phim, đáp ứng được các nhu cầu công việc và giải trí thường ngày của người dùng.
+
+
+Thiết kế chắc chắn vốn là bản sắc của Dell
+
+Dell Inspiron 5448 - RJNPG1 sở hữu thân máy vuông vức mạnh mẽ đầy nam tính nhưng các cạnh máy được bo tròn mềm mại tạo cảm giác mỏng và thanh lịch hơn. Laptop Dell 5448 RJNPG1 có ngoại hình thích hợp cho những người thích sự cân đối. 
+
+Mặt trên Laptop Dell 5448 RJNPG1 nổi bật với logo Dell và nền vỏ nhám tạo sự sang trọng. Kết cấu chắc chắn giảm tối đa va đập và các tác động giúp cho Laptop Dell RJNPG1 bền hơn trong quá trình sử dụng. 
+Máy được thiết kế với phần vỏ nhựa vuông vức, màu đen mạnh mẽ, logo Dell thiết kế chìm tạo nên sự khác biệt, đem đến sự hài hòa. Bên cạnh đó, bản lề to, chắc chắn mang đến cảm giác an toàn cho người dùng khi đóng mở nắp máy.
+
+Đây được cho là chiếc laptop thích hợp với những con người lịch lãm, yêu thích sự đơn giản, thể hiện lên cá tính chuyên nghiệp của người sử dụng, tất cả là nhờ vào dáng vẻ gọn gàng, cứng cáp, tinh tế mà ta thường thấy ở những thiết kế của dòng laptop Dell.
+
+
+Màn hình 14 inch kết hợp với hình ảnh hiển thị rực rỡ
+
+Dell 5448 RJNPG1 được ứng dụng công nghệ màn hình HD WLED Truelife màn hình 14 inch cho khả năng hiển thị tốt trong nhiều điều kiện ánh sáng cao nhờ có độ tương phản tốt, đem lại sự thoải mái khi sử dụng đặc biệt là khi xem phim, chơi game hay giải trí, đều sẽ thuận lợi hơn.
+
+Với chiếc Dell 5448 RJNPG1 này bạn có thể cùng bạn bè hoặc gia đình hòa mình vào các bộ phim bom tấn một cách hấp dẫn và thoải mái.
+Màn hình rộng đi kèm với bàn phím kết hợp Touch Pad dễ dàng thao tác là những điểm cộng lớn đối với Dell Inspiron 5448 - RJNPG1
+
+Ngoài ra, bàn phím được thiết kế khoảng cách vừa phải, các phím bố trí hợp lý, độ nảy cao cho bạn tốc độ gõ rất nhanh. Touchpad thiết kế rộng và nhạy, hỗ trợ nhiều thao tác khác nhau.
+
+
+Tối ưu dung lượng pin tiêu thụ
+Laptop Dell 5448 - RJNPG1 sử dụng viên pin được tối ưu với công nghệ tiết kiệm pin nên máy có thể hoạt động mát, êm ái và tiết kiệm điện năng. Laptop Dell 5448 - RJNPG1 có thể đáp ứng tốt nhu hàng ngày của bạn.
+
+Ngoài ra, Dell 5448 - RJNPG1 được bố trí bộ phận tản nhiệt hoạt động thông minh cho máy luôn ở nhiệt độ mát mẻ, tăng tuổi thọ cho những linh kiện bên trong máy.
+
+
+Hỗ trợ tối đa khả năng kết nối
+
+Giống với nhiều dòng Laptop cao cấp khác trên thị trường, Dell 5448 - RJNPG1 hỗ trợ đầy đủ các kết nối như: USB 2.0, USB 3.0, HDMI, LAN (RJ-45), khe cắm thẻ nhớ SD. Bên cạnh đó, Wifi luôn là một kết nối không thể thiếu để sẵn sàng cho những kết nối và chia sẻ dữ liệu của bạn.
+','SP12_1.JPG','SP12_2.JPG','SP12_3.JPG','SP12_4.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5) VALUES(13,'SP13','Dell INS3558 - 70062972: Thỏa sức trải nghiệm cấu hình mạnh mẽ với cạc đồ họa rời 2GB
+
+
+Dell INS3558 – 70062972 mang đến những hiệu suất vượt trội với màn hình sắc nét cũng như các tính năng mạnh mẽ cùng cạc đồ họa rời 2GB đột phá. Với dòng sản phẩm Dell INSPIRON, Dell đã mang đến cho người dùng rất nhiều sự lựa chọn phù hợp với nhu cầu công việc giải trí hay túi tiền. 
+
+Tinh tế trong thiết kế - Chắc chắn trong kết cấu
+
+Dell INS3558 - 70062972 được tiếp nối từ các thiết bị đàn anh, có các góc cạnh được thiết kế vuông vức cùng bộ khung chắc chắn, tạo nên sự bền bỉ và sang trọng. Dell INS3558 – 70062972 được bao bọc bởi lớp vỏ cứng, nhám, cao cấp khá rắn chắc. Lớp vỏ nhám cứng cáp không những giúp dễ dàng cầm nắm laptop khi di chuyển mà còn chống bám vân tay rất tốt, dễ dàng hơn khi vệ sinh máy và di chuyển.
+Dell INS3558 – 70062972 sẽ rất thích hợp với phân khúc khách hàng lịch lãm, yêu thích sự đơn giản, thể hiện lên cá tính chuyên nghiệp của người sử dụng. Tất cả là nhờ vào dáng vẻ gọn gàng, cứng cáp, tinh tế mà ta thường thấy ở những thiết kế của dòng laptop Dell.
+
+
+Màn hình lớn, hình ảnh hiển thị rực rỡ
+
+Dell INS3558 – 70062972 trang bị màn hình 15.6 inch chuẩn HD (1366x768 px), công nghệ HD LED Backlit cho hình ảnh hiển thị sắc nét, sống động, màu sắc trung thực, độ tương phản cân đối, ánh sáng vửa đủ. Dell INS3558 – 70062972 sẽ cho bạn trải nghiệm nhiều tựa game, những bộ phim HD vô cùng thú vị…
+Hơn nữa, công nghệ màn hình HD WLED TrueLife mang lại khả năng hiển thị màu sắc hài hòa, độ sáng cao, góc nhìn tốt. Độ phân giải 1366x768 pixel giúp cho các chi tiết trở nên rõ ràng và trung thực hơn.
+
+
+Ổ cứng 500 GB thoải mái lưu trữ
+Ổ đĩa cứng 500 GB được tích hợp trên máy Dell INS3558 – 70062972 giúp cho bạn có thể chủ động hơn trong công việc lưu trữ dữ liệu cũng như quản lý các ứng dụng, trò chơi. Không còn phải lo nghĩ quá nhiều về tình trạng hết bộ nhớ trống. 
+
+​
+
+Cấu hình cao cấp giúp bạn thỏa sức sáng tạo
+
+Máy tính xách tay Dell INS3558 – 70062972 sở hữu Core i5-5200U, với tốc độ 2.2GHz Up to 2.7 Ghz. RAM 4GB, có thể nâng cấp lên 8GB giúp máy chạy mượt mà và tiết kiệm được lượng điện năng tiêu thụ. 
+Máy tính xách tay Dell INS3558 – 70062972 có thể đáp ứng được nhu cầu hoạt động cùng lúc nhiều chương trình mà vẫn đảm bảo được độ mượt của hình ảnh nhờ vào cạc đồ họa rời 2GB NVIDIA GeForce 820M. Chiếc máy khá hoàn hảo trong tầm giá và hỗ trợ bạn hoàn thành tốt công việc cũng như nhu cầu giải trí. 
+
+​
+
+Hỗ trợ tối đa kết nối và âm thanh cao cấp 2.0
+
+Giống với nhiều dòng Laptop cao cấp khác trên thị trường, Dell INS3558 – 70062972 hỗ trợ đầy đủ các kết nối như 2 cổng USB 2.0, 1 cổng USB 3.0 cho tốc độ truyền tải cao, cổng kết nối mạng LAN (RJ 45), cổng truy xuất hình ảnh, âm thanh chất lượng cao HDMI, khe gắn thẻ nhớ cho phép đọc và ghi dữ liệu tiện lợi..
+Kênh âm thanh 2.0 giúp tăng độ khuếch tán âm thanh, chất lượng âm thanh, độ trầm bổng được cải thiện hay hơn so với tín hiệu âm thanh gốc, cho bạn những phút giây giải trí vô cùng thú vị. Nhờ công nghệ này, Dell INS3558 – 70062972 có thể đáp ứng hầu hết những gu thưởng thức âm nhạc của bạn kể cả khi bạn là người dùng khó tính nhất.
+','SP13_1.JPG','SP13_2.JPG','SP13_3.JPG','SP13_4.JPG','SP13_5.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6,HINH7,HINH8) VALUES(14,'SP14','Apple Macbook Air  - Cấu hình mạnh, thời lượng pin "khủng"
+
+Apple Macbook Air là chiếc laptop có thiết kế hoàn hảo với vỏ nhôm sang trọng, siêu mỏng và nhẹ. Sản phẩm được trang bị cấu hình mạnh, thời lượng pin “khủng” phục vụ tốt cho nhu cầu làm việc và giải trí. Tối ưu hơn Apple Macbook Air được đầu tư card đồ họa tích hợp Intel HD Graphics 6000, ổ cứng lưu trữ SSD 256GB tốc độ tăng gấp đôi và bộ vi xử lý mới từ Intel.
+Thiết kế đặc trưng của dòng Air
+
+So với các phiên bản trước đó Macbook Air 2015 13.3 inch (hay gọi tắt là Macbook Air 2015) không có sự thay đổi khác biệt. Máy vẫn được trang bị lớp vỏ nhôm nguyên khối Unibody rất đẹp và chắn chắn. Thiết kế siêu mỏng và siêu nhẹ lý tưởng, chỉ mỏng 1.7cm và trọng lượng là 1,35 kg, rất tiện lợi và dễ dàng để bạn luôn mang theo bên mình.
+Logo quả táo Apple phát sáng mặt trên máy tạo điểm nhấn khác biệt và đầy sang trọng khi kết hợp cùng vỏ màu bạc quý phái. Macbook Air 2015 chắc chắn sẽ mang đến cho bạn không chỉ một sản phẩm công nghệ cao mà còn là một món trang sức đầy quyến rũ.
+Màn hình độ phân giải khá
+Trên phiên bản mới này, Macbook Air 2015 với màn hình rộng 13.3inch vẫn giữ nguyên độ phân giải là 1440x900, đạt mật độ khoảng 128ppi. Hình ảnh hiển thị khá chất lượng, tươi sáng. Tuy nhiên, so trong hệ sinh thái của Apple thì hiện Macbook Air vẫn là dòng có màn hình với mật độ điểm ảnh thấp, không trang bị màn hình Retina, đây là một điều đáng tiếc trên phiên bản 2015 này. Tuy nhiên, đó cũng là một yếu tố khiến giá của sản phẩm mềm hơn, là cơ hội cho người dùng có thể sở hữu được siêu phẩm của Apple.
+
+
+Cổng Thunderbolt thế hệ thứ 2
+
+Chi tiết thiết kế được nâng cấp đó chính là cổng Thunderbolt thế hệ thứ hai mà nhìn vào bằng mắt chúng ta sẽ không nhận ra được. 
+Cổng Thunderbolt 2 trên Macbook Air 2015 về mặt lý thuyết cho tốc độ cao hơn gấp đôi so với Thunderbolt 1, tốc độ truyền tải dữ liệu được đo là 20Gbps, hỗ trợ chép file nhanh hơn gấp đôi so với chuẩn cũ. Đồng thời còn có thể xuất hình ảnh độ phân giải cao ra màn hình 4K và thậm chí là 5K.
+
+Ngoài cổng giao tiếp Thunderbolt 2 thì Macbook Air 2015 còn có 2 cổng USB 3.0. So với các sản phẩm laptop cùng phân khúc thì các cổng kết nối của Macbook Air 2015 11inch thua thiệt hơn khi không có cổng LAN, HDMI, SD card và ổ đĩa quang.
+
+
+Hiệu năng
+
+Macbook Air 2015 được cập nhật phần cứng mới nên mang lại hiệu năng cao hơn thế hệ trước. Bạn sẽ có bộ xử lý Intel core i5 thế hệ thứ năm hoạt động theo kiến trúc Broadwell, hai nhân xung nhịp 1.6GHz. Máy cũng được trang bị card đồ họa tích hợp Intel HD Graphics 6000. Với cấu hình này, mọi nhu cầu công việc văn phòng hay giải trí của bạn đều làm việc một cách trơn tru mượt mà và không gây bất cứ một khó chịu nào.
+Bộ nhớ RAM 4GB cho bạn những tác vụ đa nhiệm mượt mà. Có một điều người dùng Macbook hay gặp phải đó là khi kiểm tra dung lượng trống của RAM thì hầu như sẽ thấy nó luôn trong tình trạng gần hết, tuy nhiên bạn đừng lo lắng vì điều này bởi Apple đã tối ưu hệ thống của họ, dung lượng RAM luôn được sử dụng gần mức tối đa nhằm mang lại một hiệu suất cao nhất. 
+Đặc biệt, ở phiên bản Macbook Air 2015, ổ cứng lưu trữ SSD theo chuẩn PCIe có tốc độ đọc và ghi dữ liệu cao hơn 2 lần so với thế hệ trước và nhanh bằng với tốc độ của SSD trên Mac Pro tức đạt gần 1300Mbps. Việc nâng cấp tốc độ ổ SSD hứa hẹn sẽ cải thiện đáng kể tốc độ thực thi của máy và cho những trải nghiệm khi dùng ở mức tốt hơn. Hiện nay SSD trên các máy Macbook cũ ở mức khoảng hơn 700MB/s, trên Macbook Pro Retina 2014 cũng chỉ khoảng gần 1000MB/s. Với dung lượng SSD 128GB cho phiên bản này sẽ khá phù hợp với những bạn có nhu cầu lưu trữ ít cũng như giá thành sẽ thấp hơn các phiên bản SSD 256GB.
+
+Ổ cứng flash SSD thể rắn không có bất kỳ bộ phận chuyển động nào trong ổ nên máy hoạt động rất yên tĩnh và đặt biệt là rất bền bỉ. Một điều rất nhiều người dùng ưa thích khi sở hữu một máy Macbook sử dụng ổ SSD đó là hiếm khi họ cần tắt máy, khi có việc cần di chuyển, bạn chỉ cần gập máy lại và đi mà không có bất kỳ ảnh hưởng nào, đến khi cần sử dụng lại bạn mở ra và ngay lập tức mọi thứ đã sẵn sàng. Đồng thời ổ cứng SSD cực kỳ tiết kiệm năng lượng, cho phép chiếc MacBook Air 2015 của bạn khả năng chờ lên đến một tháng mà không cần cắm sạc.
+
+
+Bàn rê cảm ứng và bàn phím
+Trên phiên bản nâng cấp 2015 của Macbook Air, Apple đã không cập nhật bàn rê chuột công nghệ mới Force Touch của hãng. Tuy nhiên, bàn rê cảm ứng hiện tại vẫn cho trải nghiệm mượt mà khi di ngón tay, độ ma sát thấp, thao tác phong phú, tương tác với hệ điều hành, cảm giác như bạn đang đi trên một màn hình cảm ứng. Ví dụ như khi cuộn trang web, nó rất giống khi ta đang vuốt trên màn hình cảm ứng, di chuyển mượt và dừng lại đúng chỗ khi dừng ngón tay. Với Trackpad của Apple, hầu hết người dùng đều quên đi sự hiện diện của con chuột máy tính.
+
+Thiết kế bàn phím chiclet cho các phím bấm gọn gàng, tinh tế. Với các phím vừa tay, khoảng cách giữa các phím thích hợp việc thao tác tiện lợi và chuẩn xác. Độ đàn hồi của các phím khá tốt cùng đèn nền backlit tạo cảm giác thoải mái và dễ dàng khi gõ, nhập văn bản ngay cả trong điều kiện ánh sáng yếu.
+
+
+Hệ điều hành OS X Yosemite
+Tất cả những thiết bị Macbook của Apple đều được cài đặt sẵn hệ điều hành bản quyền OS X. Trên Macbook Air 2015, bạn cũng sẽ được trải nghiệm hệ điều hành OS X Yosemite mới nhất vô cùng hoàn hảo. Hệ thống hoạt động mượt mà, ứng dụng, phần mềm ngày càng phong phú được tải về trực tiếp từ  App Store. Một điều đáng giá nữa để bạn lựa chọn hệ điều hành này đó là người dùng Macbook không cần quan tâm đến vấn đề virus máy tính, do tính năng bảo mật cực kỳ cao. Việc phải cài lại máy là rất hiếm khi xảy ra bởi Apple thường xuyên cung cấp các bản cập nhật vá lỗi miễn phí cho người dùng. Với OS X Yosemite trên Macbook, nếu bạn có một chiếc iPhone thì mọi thứ dường như là một trên cả điện thoại và máy tính của bạn. Chức năng đồng bộ, nghe gọi, nhắn tin, làm việc với văn bản, hình ảnh…của điện thoại đều có thể thực hiện trên một chiếc Macbook. Trải nghiệm tuyệt vời cùng một hệ điều hành độc quyền là hiển nhiên khi bạn sỡ hữu nó.
+
+
+Thời lượng pin khủng - 12 giờ sử dụng
+
+MacBook Air 2015 cho thời gian đến 12 giờ sử dụng sau một lần sạc đầy. Đó là thời lượng pin rất ấn tượng đối với bất kỳ máy tính xách tay nào. Hãy tưởng tượng chỉ cần sạc đầy là bạn có thể yên tâm mang máy đi khắp nơi suốt ngày làm việc mà không cần quan tâm đến thiết bị sạc cùng ổ cắm điện. Ngoài ra, những cải tiến từ Apple cho phép bạn sạc đến 1000 lần thời gian xả đầy đủ chu kỳ và chế độ chờ lên đến 30 ngày.
+','SP14_1.JPG','SP14_2.JPG','SP14_3.JPG','SP14_4.JPG','SP14_5.JPG','SP14_6.JPG','SP14_7.JPG','SP14_8.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4) VALUES(15,'SP15','Laptop Macbook Pro Retina 15.4 inch – Đỉnh cao của công nghệ
+
+
+Macbook Pro Retina vẫn giữ vững những nét đặc trưng trong thiết kế của “quả táo cắn dở” là thiết kế liền khối tinh tế, sang trọng, mang đến đẳng cấp cho người sử dụng. Bên cạnh đó là những nâng cấp cải tiến mạnh mẽ như sở hữu cấu hình khủng với bộ xử lý Intel Core i7 Haswell, ổ đĩa rắn SSD, cùng card đồ họa rời NVIDIA GeForce GT 750M bên cạnh card onboard là Iris Pro. Ngoài ra, Macbook Pro Retina còn sở hữu màn hình Retina và khả năng kết nối vô cùng phong phú.
+Thiết kế truyền thống siêu nhẹ
+
+Macbook Pro Retina được thiết kế theo phong cách hiện đại với hình dáng vuông vức, gọn gàng, màu bạc sang trọng, nổi bật với logo quả táo trên nắp máy. Các cổng kết nối được bố trí tập trung ở cạnh trái và cạnh phải. Đặc biệt hơn, máy chỉ còn 18mm và nặng 2.04 kg.
+Màn hình Retina độ nét siêu cao
+
+Thuật ngữ Retina không còn xa lạ gì với những ai yêu thích hàng công nghệ hiện nay, đó là tiêu chuẩn màn hình mà Apple đưa ra cho các thiết bị điện tử của hãng. Nay công nghệ màn hình Retina đã có mặt trong Macbook Pro Retina có màn hình 15.4”,  độ phân giải lên tới 2880 x 1800 pixel mang đến cho bạn những hình ảnh chân thật và sống động nhất. Bên cạnh đó, sản phẩm còn tích hợp tấm nền IPS cho phép mắt bạn nhìn màn hình với mọi góc độ, phạm vi lên đến 178 độ.
+Cấu hình phần cứng mạnh mẽ
+
+Không chỉ sỡ hữu màn hình siêu sắc nét, Macbook Pro Retina còn là một chiếc laptop có cấu hình siêu khủng. Sản phẩm được trang bị bộ vi xử lý Intel Core i7 2.5-GHz quad-core, RAM 16GB, ổ SSD 512GB cho tốc độ hoạt động và khả năng truy xuất dữ liệu  vượt trội, mọi hoạt động đều trơn tru và mượt mà. Bên cạnh đó thì không thể không kể đến sự góp của Intel Iris Pro Graphics Shared và NVIDIA GeForce GT 750M 2GB với công nghệ chuyển đổi riêng biệt. Bạn có thể chơi game khủng trên độ phân giải của Macbook Pro một cách cực kỳ mượt mà và thoải mái.
+Hệ điều hành Mac OS X 10.9 Mavericks
+
+Thiết bị sử dụng hệ điều hành Mac OS X 10.9 Mavericks được phép download miễn phí, giao diện của máy khá đẹp mắt, được bố trí khoa học và rất tiện dụng. Hệ điều hành này giúp bạn có thể đồng bộ dữ liệu với iPhone, iPad, chia sẻ và lưu trữ dễ dàng với dịch vụ lưu trữ đám mây iCloud. Apple còn hỗ trợ thêm nhiều các ứng dụng thú vị như Pages, Keynote, Numbers, iPhoto, iMovie, và GarageBand, cùng trình duyệt Safari, Mail, và iBooks.
+
+Thời lượng pin lâu lên đến 8 tiếng
+
+MacBook Pro Retina có thời lượng pin lên đến 8 giờ sau một lần sạc đầy và duy trì trạng thái ngủ lên đến 30 ngày. Với thời lượng pin lâu dài ấn tượng sản phẩm thích hợp dùng trong công việc văn phòng, hay giúp bạn giảm tối đa tình trạng hư pin thường gặp ở các dòng sản phẩm khác khi phải sạc quá nhiều lần trong ngày.
+','SP15_1.JPG','SP15_2.JPG','SP15_3.JPG','SP15_4.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT,HINH1,HINH2,HINH3,HINH4,HINH5,HINH6) VALUES(23,'SP23','Trên thị trường, pin sạc dự phòng Xphone tuy là một cái tên mới nhưng đây là thương hiệu được nhiều người dùng ưa chuộng bởi thiết kế đẹp, hiệu suất pin khá và mức giá cực kỳ phải chăng.
+Sử dụng 2 cell pin cho tổng dung lượng 5200 mAH, sạc dự phòng Xphone sẽ là nguồn điện “cứu sống” cho smartphone của bạn trong nhiều trường hợp khẩn cấp. 
+
+ 
+
+Dung lượng 5200mAH cho ra dòng điện ổn định 2A
+
+Trải nghiệm thực tế cho thấy, XPhone 5200mAh có thể sạc đầy một chiếc iPhone 6 Plus và một chiếc iPhone 5. Theo thống kê từ một số phần mềm đo dòng sạc, Xphone 5200mAH cho ra dòng điện rất ổn định là 2A và không gặp phải hiện tượng sụt nguồn điện hoặc sạc bị ngắt quãng giữa chừng.
+Đặc thù của pin sạc dự phòng là ít nhiều sẽ tỏa nhiệt trong quá trình sạc, nếu phải sạc trong thời gian dài mà không được giải phóng nhiệt đúng cách sẽ làm ảnh hưởng tới tuổi thọ của sạc dự phòng. Sử dụng lớp vỏ bằng kim loại nên Xphone 5200mAH dẫn nhiệt khá tốt, dàn trải... nên chỉ đem lại cảm giác ấm nhẹ, làm tăng độ bền cho sản phẩm.
+
+ 
+
+Thiết kế đẹp, hỗ trợ tính năng chụp ảnh qua Bluetooth
+
+Về thiết kế, viên pin Xphone 5200mAH có màu vàng gold và vàng hồng. Chất liệu vỏ kim loại tương tự các viên pin sử dụng vỏ kim loại khác trên thị trường. Điểm khác biệt đáng kể nhất là kích cỡ của pin đã nhỏ gọn hơn rất nhiều. Ngoài ra, các mép của viên pin mới đã được phay vát nên không còn cảm giác sắc và ráp tay như khi cầm nhiều sản phẩm kém chất lượng khác.
+Một điểm khá thú vị trên Xphone 5200mAh là khả năng kết nối với smartphone qua Bluetooth để chụp ảnh từ xa. Cách thức kết nối của sạc dự phòng Xphone với điện thoại thông minh khá đơn giản khi Bluetooth hiện đang là phương thức kết nối rất phổ biến. Chiếc sạc dự phòng Xphone của bạn từ nay sẽ bổ sung thêm một nút chụp ảnh từ xa rất tiện lợi. Đây được xem là tính năng phù hợp với việc selfie với gậy tự sướng hoặc chụp ảnh toàn cảnh với bạn bè không cần chạm vào điện thoại.
+','SP23_1.JPG','SP23_2.JPG','SP23_3.JPG','SP23_4.JPG','SP23_5.JPG','SP23_6.JPG');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT) VALUES(24,'SP24','- Thẻ nhớ là một phụ kiện quan trọng với một chiếc điện thoại hay các thiết bị điện tử, vì vậy việc lựa chọn một thẻ nhớ phù hợp với thiết bị là rất quan trọng. Thẻ nhớ Adata MicroSD 8GB class 4 chuẩn giao tiếp SD 2.0 với tốc độ đọc - ghi khoảng 4m/s, sẽ giúp bạn lưu trữ hàng ngàn dữ liệu như: âm thanh, hình ảnh, video, tập tin...
+- Hỗ trợ chuẩn kết nối SD 2.0 cho phép truyền dữ liệu nhanh chóng.
+- Tốc độ Đọc - Ghi dữ liệu có thể lên tới 4m/s.
+- Lưu trữ được hàng ngàn dữ liệu khác nhau như:  Âm thanh, hình ảnh, video, tập tin...
+- Tương thích với nhiều thiết bị di động khác nhau.');
+INSERT INTO DACDIEMNOIBAT(MADACDIEM,MASP,DACDIEMNOIBAT) VALUES(25,'SP25','Sản phẩm thẻ nhớ Micro SDHC Class 4 8GB của Silicon Power không chỉ mang
+đến dung lượng lưu trữ lớn mà còn đem việc khả năng truyền dữ liệu
+nhanh chóng với tốc độ đọc ghi tối thiểu 4MB/giây, hỗ trợ khả năng làm
+việc nhanh chóng và hiệu quả không ngờ.');
+
+
+/*THONGSOKYTHUATDIENTHOAI*/
+
+INSERT INTO THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) VALUES('Màn hình: 4.7 inch Retina HD with 3D touch',' CPU: Apple A9 64-bit, Dual-core 1.84 GHz','RAM/ROM: 2 GB/16 GB','Camera: 12 MP/5 MP',' Pin: 1715 mAh','SP1');
+INSERT INTO THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) VALUES('Màn hình: 4.7 inch Retina HD with 3D touch',' CPU: Apple A9 64-bit, Dual-core 1.84 GHz','RAM/ROM: 2 GB/16 GB','Camera: 12 MP/5 MP',' Pin: 1715 mAh','SP2');
+INSERT INTO THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) VALUES('Màn hình: 4.7 inch Retina HD with 3D touch',' CPU: Apple A9 64-bit, Dual-core 1.84 GHz','RAM/ROM: 2 GB/16 GB','Camera: 12 MP/5 MP',' Pin: 1715 mAh','SP3');
+INSERT INTO THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) VALUES('Màn hình: 4.7 inch Retina HD with 3D touch',' CPU: Apple A9 64-bit, Dual-core 1.84 GHz','RAM/ROM: 2 GB/16 GB','Camera: 12 MP/5 MP',' Pin: 1715 mAh','SP4');
+INSERT INTO THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) VALUES('Màn hình: 4.7 inch Retina HD with 3D touch',' CPU: Apple A9 64-bit, Dual-core 1.84 GHz','RAM/ROM: 2 GB/16 GB','Camera: 12 MP/5 MP',' Pin: 1715 mAh','SP5');
+INSERT INTO THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) VALUES('Màn hình: 4.7 inch Retina HD with 3D touch',' CPU: Apple A9 64-bit, Dual-core 1.84 GHz','RAM/ROM: 2 GB/16 GB','Camera: 12 MP/5 MP',' Pin: 1715 mAh','SP6');
+
+
+
+/*Them tiep tuc san pham dien thoai*/
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP26','HTC Desire 326G Dual Sim',1,7,1,1,1990000,26,'SP26_1.JPG','SP26_1.JPG','SP26_2.JPG','SP26_3.JPG','SP26_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP27','HTC Desire Eye',1,7,1,1,5590000,27,'SP27_1.JPG','SP27_1.JPG','SP27_2.JPG','SP27_3.JPG','SP27_4.JPG','SP27_5.JPG','SP27_6.JPG','SP27_7.JPG','SP27_8.JPG','SP27_9.JPG','SP27_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP28','HTC One M8 Eye',1,7,1,1,5990000,28,'SP28_1.JPG','SP28_1.JPG','SP28_2.JPG','SP28_3.JPG','SP28_4.JPG');
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP29','Huawei Gr5',1,5,1,1,4490000,29,'SP29_1.JPG','SP29_1.JPG','SP29_2.JPG','SP29_3.JPG','SP29_4.JPG','SP29_5.JPG','SP29_6.JPG','SP29_7.JPG','SP29_8.JPG','SP29_9.JPG','SP29_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP30','Huawei Titan – Y6 Pro',1,5,1,1,2790000,30,'SP30_1.JPG','SP30_1.JPG','SP30_2.JPG','SP30_3.JPG','SP30_4.JPG','SP30_5.JPG','SP30_6.JPG','SP30_7.JPG','SP30_8.JPG','SP30_9.JPG','SP30_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP31','Huawei Ascend Y541-U02',1,5,1,1,1590000,31,'SP31_1.JPG','SP31_1.JPG','SP31_2.JPG','SP31_3.JPG','SP31_4.JPG','SP31_5.JPG','SP31_6.JPG','SP31_7.JPG','SP31_8.JPG','SP31_9.JPG','SP31_10.JPG');
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP32','Microsoft Lumia 950 XL',1,16,3,1,6590000,32,'SP32_1.JPG','SP32_1.JPG','SP32_2.JPG','SP32_3.JPG','SP32_4.JPG','SP32_5.JPG','SP32_6.JPG','SP32_7.JPG','SP32_8.JPG','SP32_9.JPG','SP32_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP33','Nokia 230',1,3,1,1389000,33,'SP33_1.JPG','SP33_1.JPG','SP33_2.JPG','SP33_3.JPG','SP33_4.JPG','SP33_5.JPG','SP33_6.JPG','SP33_7.JPG','SP33_8.JPG','SP33_9.JPG','SP33_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP34','Nokia Lumia 730',1,3,3,1,2790000,34,'SP34_1.JPG','SP34_1.JPG','SP34_2.JPG','SP34_3.JPG','SP34_4.JPG','SP34_5.JPG','SP34_6.JPG','SP34_7.JPG','SP34_8.JPG','SP34_9.JPG','SP34_10.JPG');
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP35','Oppo F1',1,6,1,1,4990000,35,'SP35_1.JPG','SP35_1.JPG','SP35_2.JPG','SP35_3.JPG','SP35_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP36','Oppo F1S',1,6,1,1,5990000,36,'SP36_1.JPG','SP36_1.JPG','SP36_2.JPG','SP36_3.JPG','SP36_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP37','Oppo Neo 7',1,6,1,1,3290000,37,'SP37_1.JPG','SP37_1.JPG','SP37_2.JPG','SP37_3.JPG','SP37_4.JPG','SP37_5.JPG','SP37_6.JPG','SP37_7.JPG','SP37_8.JPG','SP37_9.JPG','SP37_10.JPG');
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP38','Sony Xperia C4 Dual',1,4,1,1,6190000,38,'SP38_1.JPG','SP38_1.JPG','SP38_2.JPG','SP38_3.JPG','SP38_4.JPG','SP38_5.JPG','SP38_6.JPG','SP38_7.JPG','SP38_8.JPG','SP38_9.JPG','SP38_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4,HINHTHUCTE1,HINHTHUCTE2,HINHTHUCTE3,HINHTHUCTE4,HINHTHUCTE5,HINHTHUCTE6) VALUES('SP39','Sony Xperia M5 Dual',1,4,1,1,8990000,39,'SP39_1.JPG','SP39_1.JPG','SP39_2.JPG','SP39_3.JPG','SP39_4.JPG','SP39_5.JPG','SP39_6.JPG','SP39_7.JPG','SP39_8.JPG','SP39_9.JPG','SP39_10.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP40','Sony Xperia Z5 Dual',1,4,1,1,13990000,40,'SP40_1.JPG','SP40_1.JPG','SP40_2.JPG','SP40_3.JPG','SP40_4.JPG');
+
+/*them tiep tuc san pham laptop*/
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP41','Laptop Dell N3459 - C3I51105',2,20,5,2,11990000,41,'SP41_1.JPG','SP41_1.JPG','SP41_2.JPG','SP41_3.JPG','SP41_4.JPG');
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP42','Macbook Pro 15.4 256GB (Retina Display)',2,32,4,2,47990000,42,'SP42_1.JPG','SP42_1.JPG','SP42_2.JPG','SP42_3.JPG','SP42_4.JPG');
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP43','Laptop Asus K555LD',2,19,5,2,11990000,43,'SP43_1.JPG','SP43_1.JPG','SP43_2.JPG','SP43_3.JPG','SP43_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP44','Laptop Asus X555UJ_XX064D',2,19,5,2,12690000,44,'SP44_1.JPG','SP44_1.JPG','SP44_2.JPG','SP44_3.JPG','SP44_4.JPG');
+
+/*them tiep tuc san pham MayTinhBang*/
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP45','Máy tính bảng Dell Venue 7 3740',3,25,1,2,3990000,45,'SP45_1.JPG','SP45_1.JPG','SP45_2.JPG','SP45_3.JPG','SP45_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP46','ASUS ZenPad 7.0 (Z370CG)',3,28,1,2,3790000,46,'SP46_1.JPG','SP46_1.JPG','SP46_2.JPG','SP46_3.JPG','SP46_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP47','Asus Zenpad 8 Z380 16GB',3,28,1,2,5790000,47,'SP47_1.JPG','SP47_1.JPG','SP47_2.JPG','SP47_3.JPG','SP47_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,MANSX, MAHDH,TRANGTHAI,GIA,MADACDIEM,HINHDAIDIEN,HINH1) VALUES('SP48','Tab Huawei T1 10.0',3,27,1,2,3990000,48,'SP48_1.JPG','SP48_1.JPG');
+
+/*them tiep tuc san pham PhuKien*/
+
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP49','Thiết bị mạng DLINK3G_DWR730',4,1800000,49,'SP49_1.JPG','SP49_1.JPG','SP49_2.JPG','SP49_3.JPG','SP49_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP50','Sạc nhanh Samsung Galaxy Note 5',4,1190000,50,'SP50_1.JPG','SP50_1.JPG','SP50_2.JPG','SP50_3.JPG','SP50_4.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1) VALUES('SP51','Bao da Sview Samsung Galaxy Note 5',4,1290000,51,'SP51_1.JPG','SP51_1.JPG');
+INSERT INTO SANPHAM(MASP,TENSP,MALOAISP,GIA,MADACDIEM,HINHDAIDIEN,HINH1,HINH2,HINH3,HINH4) VALUES('SP52','Thiết bị mạng DLINK DIR816L',4,1300000,52,'SP52_1.JPG','SP52_1.JPG','SP52_2.JPG','SP52_3.JPG','SP52_4.JPG');
+
+/*them thong so ky thuat dien thoai*/
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 4.5", FWVGA','CPU: Spreadtrum, 4 nhân x 1.2 GHz','RAM/ROM: 1 GB','Camera: 8.0 MP','Pin: 2000mAh','SP26');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5.2" IPS LCD','CPU: Qualcomm® Snapdragon™ 801, Quad-core 2.3 GHz','RAM/ROM: 2 GB/16 GB','Camera: 13 MP/13 MP','Pin: 2400 mAh','SP27');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5.0" Full HD','CPU: Snapdragon™ 801 Quad core 2.3 Ghz','RAM/ROM: 2 GB/16 GB','Camera: 13 MP/5 MP','Pin: 2600 mAh','SP28');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5.5" IPS LCD','CPU: Qualcomm Snapdragon 616, Octa-Core','RAM/ROM: 2 GB/16 GB','Camera: 13 MP/5 MP','Pin: 3000 mAh','SP29');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5" HD IPS','CPU: Mediatek MT6735P , Quad-core 1.3 GHz','RAM/ROM: 2 GB/16 GB','Camera: 13 MP/5 MP','Pin: 4000 mAh','SP30');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 4.5 inch LED-backlit IPS LCD','CPU: Speadtrum Quad-core 1.2 GHz','RAM/ROM: 1 GB/8 GB','Camera: 8 MP/2 MP','Pin: 1730 mAh','SP31');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5" AMOLED 1280 x 720 pixels','CPU: Qualcomm Snapdragon 212, Quad-core 1.3GHz','RAM/ROM: 1 GB/16 GB','Camera: 8 MP/5 MP','Pin: 2000 mAh','SP32');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 2.8" TFT QVGA','','','Camera: 2 MP/2 MP','Pin: 1200 mAh','SP33');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 4.7 inch HD AMOLED','CPU: Qualcomm Snapdragon 400, Quad-core 1.2 GHz','RAM/ROM: 1 GB/8 GB','Camera: 6.7 MP/5 MP','Pin: 2220 mAh','SP34');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5" HD IPS LCD','CPU: Qualcomm Snapdragon 616, Octa-core 1.5 GHz','RAM/ROM: 3 GB/16 GB','Camera: 13 MP/8 MP','Pin: 2500 mAh','SP35');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5.5", IPS LCD, 720 x 1280 pixels','CPU: Mediatek MT6750, 8 nhân 1.5 GHz','RAM/ROM: 3 GB/32GB','Camera: 13 MP/16 MP','Pin: Lithium - Ion 3075 mAh','SP36');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5 inch qHD IPS LCD','CPU: MT6582, Quad-core 1.3 GHz','RAM/ROM: 1 GB/16 GB','Camera: 8 MP/5 MP','Pin: 2420 mAh','SP37');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5" HD IPS','CPU: Qualcomm Snapdragon 615 64-bit, Quad-core 1.5GHz & Quad-core 1.0GHz','RAM/ROM: 2 GB/8 GB','Camera: 13 MP/5 MP','Pin: 2400 mAh','SP38');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5 inch Full HD IPS','CPU: MediaTek Helio X10, Octa-core 2.0 GHz','RAM/ROM: 3 GB/16 GB','Camera: 21.5 MP/13 MP','Pin: 2600 mAh','SP39');
+insert into THONGSOKYTHUATDIENTHOAI(MANHINH,CPU,RAMROM,CAMERA,Pin,MASP) values('Màn hình: 5.2 inch IPS LCD','CPU: Snapdragon 810, Quad-core 1.5 GHz + Quad-core 2.0 GHz','RAM/ROM: 3 GB/32 GB','Camera: 23 MP/5 MP','SP40');
+
+
+/*them thong so ky thuat laptop*/
+
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel® Core™ i5-5200U','Bộ nhớ: 4GB, DDR3L','Màn hình: 14", HD LED','Ổ cứng: 500 GB, HDD','Card đồ họa: AMD Radeon R7 M265, 2 GB','SP12');
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel® Broadwell i5-5200U','Bộ nhớ: 4GB, DDR3','Màn hình: 15.6", HD LED','Ổ cứng: 500GB, HDD','Card đồ họa: NVIDIA GeForce 820M','SP13');
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel® Core™  i5 dual-core','Bộ nhớ:4GB, LPDDR3','Màn hình: 13.3", LED-backlit','Ổ cứng: 128 GB','Card đồ họa: VGA onboard, Intel HD Graphics 6000','SP14');
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel® Core™  i7','Bộ nhớ: 16 GB, DDR3L','Màn hình: 15.4", LED-backlit','Ổ cứng: 256 GB','Card đồ họa: Intel Iris Pro Graphics','SP15');
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel® Core™ i5 6200U','Bộ nhớ: 4 GB, DDR3L','Màn hình: 14" HD LED','Ổ cứng: 500 GB, HDD','Card đồ họa: Intel HD Graphics','SP41');
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel® Core™  i7','Bộ nhớ: 16 GB, DDR3L','Màn hình: 15.4", LED-backlit','Ổ cứng: 256 GB','Card đồ họa: Intel Iris Pro Graphics','SP42');
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel® Core™ i5 4210U','Bộ nhớ: 4GB, DDR3','Màn hình: 15.6", HD LED','Ổ cứng: 500 GB, HDD','Card đồ họa: Nividia Geforce GT820','SP43');
+insert into THONGSOKYTHUATLAPTOP(BOVIXULY,BONHO,MANHINH,OCUNG,CARDDOHOA,MASP) values('Bộ vi xử lý: Intel Core i5-6200U (3MB Cache, up to 2.8 GHz)','Bộ nhớ: 4GB, DDR3L, 1600MHz','Màn hình: 15.6", HD Glare, LED','Ổ cứng: HDD, 500GB, 5400rpm','Card đồ họa: NVIDIA Geforce 920M','SP44');
+
+
+/*them thong so ky thuat may tinh bang*/
+
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình: 9.7 inch Retina IPS','CPU: Apple A8X, Dual-core 1.5 GHz Cyclone (ARM v8-based)','RAM/ROM: 2 GB/32 GB','Camera: 8 MP/1.2 MP','Pin: 27.3 Wh','SP16');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình:7.9 inch IPS LED-backlit LCD','CPU: Apple A8, Dual-Core 1.5 GHz','RAM/ROM: 2 GB/16 GB','Camera: 8 MP/1.2 MP','Pin: 19.1 Wh (5162 mAh)','SP17');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình:7.9 inch IPS LED-backlit LCD','CPU: Apple A8, Dual-Core 1.5 GHz','RAM/ROM: 2 GB/16 GB','Camera: 8 MP/1.2 MP','Pin: 19.1 Wh (5162 mAh)','SP18');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình: 12.9" Retina LED-backlit LCD','CPU: Apple A9X, Dual-core 2.2 GHz','RAM/ROM: 4 GB/128 GB','Camera: 8 MP/1.2 MP','Pin: 38.5 Whrs','SP19');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình: 9.7", Super AMOLED, 2048 x 1536 pixels','CPU: Exynos 5433 Octa-core, Quad-core 1.9 GHz + Quad-core 1.3 GHz','RAM/ROM: 3 GB/32 GB','Camera: 8 MP/2.1 MP','Pin: Li-Ion, 5870 mAh','SP20');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình: 7 inch IPS LCD','CPU: Intel Atom Z3460, Dual-core 1.6 GHz','RAM/ROM: 1 GB/16 GB','Camera: 5 MP/0.9 MP','Pin: 4550 mAh','SP45');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình: 7 inch IPS LCD','CPU: Intel Atom x3-C3230, Quad-core 1.2 GHz','RAM/ROM: 2 GB/16 GB','Camera: 8 MP/2 MP','Pin: Li-Poly, 3500 mAh','SP46');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình: 8" LED Backlight IPS','CPU: Qualcomm MSM8916, Quad-core 1.2GHz','RAM/ROM: 2 GB/16 GB','Camera: 8 MP/2 MP','Pin: 4108 mAh','SP47');
+insert into THONGSOKYTHUATMAYTINHBANG(MANHINH,CPU,RAMROM,CAMERA,PIN,MASP) values ('Màn hình: 9.6", IPS, 800 x 1280 pixels','CPU: Qualcomm MSM8916  Quad core 1.2GHz','RAM/ROM: 1 GB/8 GB','Camera: 5 MP/2 MP','Pin: Li-Po 4800 mAh','SP48');
