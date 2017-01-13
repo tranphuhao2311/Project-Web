@@ -262,54 +262,7 @@
         </div>
       </div>
     </div>
-    <div class="container container-fixed" style="margin-top: 20px;">
-      <div class="row">
-        
-		  <?php
-			echo '<div class="l-block-new"> <a href="tintuc.php?lt=5"><i class="icons tt" title="Tin tức công nghệ"></i></a> <a href="tintuc.php?loaitin=5">
-          <h2>TIN CÔNG NGHỆ</h2>
-          </a> </div>';
-		  ?>
-        <div class="r-block-new">
-          <div class="block-news" style="position: relative;">
-            <div id="owl-news" class="owl-carousel owl-theme " style="opacity: 1; display: block;">
-              <div class="owl-wrapper-outer" style="position: relative;width: 100%">
-                <div class="owl-wrapper" style="width: 3888px; left: 0px; display: block;">
-                 <?php
-				require("connect.php");
-				$sql = "SELECT * FROM tintuc limit 3";
-				$result = $conn->query($sql);
-				$buoi="";
-				if ($result->num_rows > 0) {
-					while($row = $result->fetch_assoc())
-					{
-						echo '
-						<div class="owl-item" style="width: 324px;">
-						<div class="item">
-						  <div class="news-item">
-							<div class="item-wapper">
-							  <div class="float-left img"><a href="chitiettintuc.php?matin='.$row["MATIN"].'&lt='.$row["LOAITIN"].'"><img src="img/HinhTinTuc/'.$row["HINH1"].'" alt="'.$row["TIEUDE"].'"></a></div>
-							  <h2 class="float-left text"><a href="chitiettintuc.php?matin='.$row["MATIN"].'&lt='.$row["LOAITIN"].'">'.$row["TIEUDE"].'</a></h2>
-							  <div class="float-left text2">'. date('d/m/Y | h:i A'.$buoi.'',strtotime($row["NGAYDANG"])).'</div>
-							</div>
-						  </div>
-						</div>
-						</div>
-						';
-					}
-				}	
-				$result->close ();
-				$conn->close();
-				
-				?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container container-fixed">
+   <div class="container container-fixed">
       <div class="row phone-wapper" style="height: 619px;">
         <div class="h-item-active" style="top: 0px; left: 0px;">
           <h2 class="head"><?php
@@ -356,7 +309,7 @@
 				echo '<div class="h-item h-item-2 item-1" style="left: 195px; top: 0px;"> <a href="chi_tiet.php?msp='.$row["MASP"].'&lsp='.$row["MALOAISP"].'"> <img src="img/HinhSP/'.$row["HINHDAIDIEN"].'" alt="" style="width: 100%; height: 100%; display: inline;" data-original="http://cdn.viettelstore.vn/images/Product/ProductImage//sony-xz.jpg"></a> </div>';
 			}
 		}
-		$sql = "SELECT * FROM sanpham sp,thongsokythuatdienthoai ts WHERE sp.MASP=ts.MASP and sp.MALOAISP = 1 and sp.TINHTRANGXOA=0 LIMIT 8";
+		$sql = "SELECT * FROM sanpham sp,thongsokythuatdienthoai ts WHERE sp.MASP=ts.MASP and sp.TINHTRANGXOA=0 ORDEr BY sp.STT DESC LIMIT 8";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc())

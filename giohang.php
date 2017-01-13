@@ -187,7 +187,7 @@
                     <table style="width: 100%;">
                         <tbody><tr>
                             <td style="width: 50%; padding-right: 10px;">
-                                <a href="#" id="giohang_thanhtoan8123" onclick="giohang_thanhtoan_click()" class="btn btn-payment btn-bg-payment margin-top-15 margin-left-20">Thanh toán</a>
+                                <a href="thong-tin-khach-hang.php" id="giohang_thanhtoan8123" onclick="giohang_thanhtoan_click()" class="btn btn-payment btn-bg-payment margin-top-15 margin-left-20">Thanh toán</a>
                             </td>
                             <td style="width: 50%; padding-left: 10px;">
                                 <a href="index.php" class="btn btn-payment btn-bg-continue margin-top-15 margin-left-20">Tiếp tục mua hàng</a>
