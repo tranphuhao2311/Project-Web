@@ -178,6 +178,7 @@ body{
 			$user=$_POST["user"];
 			$password=$_POST["password"];
 			$sql="select * from nguoidung where TAIKHOAN='".$user."' and MATKHAU='".$password."'";
+			debug_to_console($sql);
 			$result = $conn->query($sql);
 			$SoDong=$result->num_rows;
 			$row = $result->fetch_assoc();
@@ -189,6 +190,15 @@ body{
 			else
 				echo '<span style="color:red;">Nhập sai tài khoản hoặc mật khẩu!</span>';
 		}
+		function debug_to_console( $data ) {
+
+    if ( is_array( $data ) )
+        $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+    else
+        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+
+    echo $output;
+}
 		?>
 		</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
